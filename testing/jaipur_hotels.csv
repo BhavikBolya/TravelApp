@@ -1,0 +1,151 @@
+hotel_id,hotel_name,hotel_price
+1,Jaipur Marriott Hotel,$97
+2,"Holiday Inn Jaipur City Centre, an IHG Hotel",$93
+3,"Crowne Plaza Jaipur Tonk Road, an IHG Hotel",$115
+4,"Four Points by Sheraton Jaipur, City Square",$85
+5,"Holiday Inn Jaipur City Centre, an IHG Hotel",$93
+6,Jai Mahal Palace,$278
+7,The Oberoi Rajvilas,$349
+8,Hilton Jaipur,$86
+9,"Trident, Jaipur",$101
+10,"ITC Rajputana, A Luxury Collection Hotel, Jaipur",$97
+11,Treebo Trend Hotel New Rockwell,$22
+12,Umaid Bhawan - A Heritage Style Boutique Hotel,$63
+13,Jaipur Marriott Hotel,$97
+14,"ITC Rajputana, A Luxury Collection Hotel, Jaipur",$97
+15,Rambagh Palace,$479
+16,"Four Points by Sheraton Jaipur, City Square",$85
+17,Umaid Mahal - A Heritage Style Boutique Hotel,$46
+18,Radisson Blu Jaipur,$94
+19,Radisson Jaipur City Center,$72
+20,Chokhi Dhani Resort Jaipur,$121
+21,"Devi Ratn, Jaipur -IHCL SeleQtions",$208
+22,"Crowne Plaza Jaipur Tonk Road, an IHG Hotel",$115
+23,5 BY OYO METROPOLITAN,$153
+24,Royal Heritage Haveli,$142
+25,Vesta International,$38
+26,Indana Palace Jaipur,$101
+27,Narain Niwas Palace,$94
+28,Alsisar Haveli - A Heritage Hotel,$82
+29,Ramada by Wyndham Jaipur North,$51
+30,Sarovar Premiere Jaipur,$115
+31,Zone by The Park Bani Park Jaipur,$78
+32,ibis Jaipur Civil Lines Hotel,$47
+33,Ramada by Wyndham Jaipur,$90
+34,Hotel Gandharva - A Green Hotel,$37
+35,Royal Orchid Central Jaipur,$51
+36,Anuraag Villa,$17
+37,Bissau Palace,$67
+38,Royal View Hotel,$19
+39,Om Niwas Suite Hotel,$50
+40,Clarks Amer,$107
+41,Pearl Palace Heritage,$40
+42,Arya Niwas,$32
+43,Hotel 360,$27
+44,The Fern Residency Jaipur,$36
+45,Leisure Inn Grand Chanakya,$35
+46,Crimson Park - The Heritage,$67
+47,Hotel R K Palace,$67
+48,Hotel Royal Orchid,$53
+49,Mandawa Haveli,$45
+50,Barwara Kothi,$67
+51,Hotel Aashish,$30
+52,Sarovar Portico Jaipur,$50
+53,Dera Rawatsar - Heritage Hotel,$58
+54,Hotel Empire Regency,$60
+55,Comfort Inn Sapphire,$47
+56,The Fern - An Ecotel Hotel Jaipur,$46
+57,Nirwana Hometel Jaipur - A Sarovar Hotel,$46
+58,The Gold Palace & Resorts,$60
+59,Hotel Royal Empire,$64
+60,County Inn Hotel,$97
+61,Hotel Silver Pride,$36
+62,BrijNest Suites,$82
+63,Hotel De Nada,$58
+64,Pink Pearl Resort and Fun City,$31
+65,Broadway Inn,$42
+66,Hotel Rajlaxmi Palace,$25
+67,Hotel Triveni Residency,$20
+68,Hotel Marigold Jaipur,$67
+69,Hotel Vimal Heritage,$38
+70,Sanskar Prime Hotel,$24
+71,Hotel Cordon Vay,$19
+72,The Wallstreet A Busines Hotel,$38
+73,Hotel Dev Villas,$35
+74,Khandwa Haveli,$52
+75,Hotel Sarang Palace,$27
+76,Shakun Hotels & Resorts Jaipur,$87
+77,Ginger Jaipur,$46
+78,Hotel Fort Chandragupt Jaipur,$44
+79,Jagrati Ananta Express,$33
+80,Royale Lalit Hotel Jaipur,$44
+81,Regenta Inn Jaipur,$40
+82,Hotel Indo Prime,$47
+83,Shahpura Residency,$60
+84,The Lodge B & B,$36
+85,Trimrooms Mount Blue,$33
+86,hotel S57,$29
+87,Vesta Maurya Palace,$32
+88,Jaipur Hotel New,$29
+89,OYO 24565 Hotel Morgan,$14
+90,Rawla Mrignayani Palace,$13
+91,Prem Niwas Boutique Hotel,$38
+92,The Zest,$24
+93,"Lords Plaza, Jaipur",$34
+94,Villa 243,$44
+95,Treebo Trend Airport View,$47
+96,Hotel Vrisa,$58
+97,Suryaa Villa - A City Centre Hotel,$60
+98,Raya Inn,$36
+99,LMB Hotel,$47
+100,Devraj Niwas Boutique Hotel,$40
+101,OYO 352 Hotel DRS 8586 Haveli,$113
+102,Hotel Krishna by KeyMagics,$30
+103,Amer City Heritage Hotel,$58
+104,OYO 1143 Hotel RDB Palace,$26
+105,FabHotel Prime SR 1,$33
+106,Hotel Corporate Inn,$27
+107,"Red Fox Hotel, Jaipur",$30
+108,Milestone 251,$36
+109,Hotel Sunder Palace-a heritage styled boutique hotel,$14
+110,TGI Apple Inn,$50
+111,Hotel Grand Maple,$74
+112,Hotel Rajasthan Palace Jaipur,$61
+113,Hotel Grand Lotus Inn,$27
+114,Golden Eagle Hotels & Resorts,$23
+115,Treebo Trend Resolute,$19
+116,Hotel Sumaditya,$24
+117,OYO 1049 Nirman Nagar,$69
+118,OYO 452 Hotel City Inn,$83
+119,Jai Niwas,$40
+120,Khatu Haveli,$53
+121,Hotel The Ashapurna,$48
+122,Treebo Trend Woodsvilla Suites Bapu Nagar,$27
+123,Umaid Bhawan,$112
+124,Shri Sai Residency,$17
+125,Hotel Sweet Dream,$40
+126,Tara Niwas,$19
+127,Jasoda Heritage by Keshav Global Hotels,$21
+128,Treebo Trend Natraj Jaipur,$30
+129,Hotel The Livin,$33
+130,Treebo Trend Bliss Raja Park,$20
+131,Le Amour Inn,$42
+132,Hotel RR 62,$34
+133,Krishna Palace,$19
+134,OYO 7152 Gumaan Heritage,$20
+135,Jaipur Inn,$27
+136,OYO 1199 Hotel Maharaja Residency,$68
+137,Hotel Sajjan Niwas,$26
+138,The Theme Hotel Jaipur,$54
+139,Hotel Saba Haveli,$74
+140,Mahal Rajwada Resort,$22
+141,Hotel Royal Palazzo,$58
+142,Hotel Safari,$29
+143,Heritage Haveli - A Stay Home,$37
+144,The Raas Mahal,$29
+145,Hotel Marc Inn,$30
+146,OYO 11389 Hotel NG Palace,$28
+147,The Saneer,$28
+148,Hotel Pearl Palace,$17
+149,R41- A Boutique Hotel,$33
+150,Hotel Neelam Paradise,$33
