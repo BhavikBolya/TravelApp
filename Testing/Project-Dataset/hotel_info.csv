@@ -1,4 +1,4 @@
-hotel_id,hotel_name,hotel_rating,hotel_experience,amenities,address,country,location,hotel_price
+id,hotel_name,hotel_rating,hotel_experience,amenities,address,country,location,price
 1,Jaipur Marriott Hotel,4.4,Excellent,"['Spa', 'Hot Tub', 'Free WiFi', 'Parking included', 'Laundry', 'Air conditioning']","Ashram Marg Near Jawahar Circle, Tonk Road, Jaipur, Rajasthan, 302015",India,"26.840895, 75.796167",$97
 2,"Crowne Plaza Jaipur Tonk Road, an IHG Hotel",4.4,Excellent,"['Pool', 'Spa', 'Free WiFi', 'Parking included', 'Laundry', 'Air conditioning']","SP1, Sitapura (RIICO), Tonk Road, Jaipur, Rajasthan, 302022",India,"26.779667, 75.827339",$115
 3,The Oberoi Rajvilas,4.8,Exceptional,"['Pool', 'Spa', 'Free WiFi', 'Parking included', 'Laundry', 'Air conditioning']","Goner Road, Jaipur, Rajasthan, 303012",India,"26.876067, 75.882354",$349
