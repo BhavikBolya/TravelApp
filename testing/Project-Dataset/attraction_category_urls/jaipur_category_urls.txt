@@ -1,0 +1,15 @@
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=AdventureOutdoor
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=Attractions
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=Wateractivities
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=ShowsConcerts
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=HistoryCulture
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=Privatecustomtours
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=ToursDayTrips
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=FoodDrinkNightlife
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=ClassesWorkshops
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=Transportation
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=AirHelicopterBalloonTours
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=HolidaySeasonalTours
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=WeddingsHoneymoons
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=ShoppingFashion
+https://www.expedia.com/things-to-do/search?&rid=1669&location=Jaipur%2C+Rajasthan%2C+India&startDate=2022-01-29&endDate=2022-01-30&swp=on&sort=RECOMMENDED&filter.categories=WildlifeNature
