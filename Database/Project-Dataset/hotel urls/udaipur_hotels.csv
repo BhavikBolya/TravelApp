@@ -1,0 +1,251 @@
+hotel_id,hotel_name,hotel_price
+1,Taj Lake Palace,557
+2,The Leela Palace Udaipur,579
+3,"The Oberoi Udaivilas, Udaipur",541
+4,Taj Aravali Resort & Spa,208
+5,Radisson Blu Udaipur Palace Resort & Spa,186
+6,Treebo Trend Orbit,133
+7,Hotel Lakend,114
+8,The Lalit Laxmi Vilas Palace,188
+9,juSTa Sajjangarh Resort & Spa,93
+10,Taj Fateh Prakash Palace,302
+11,The Ananta Udaipur,159
+12,Jagat Niwas Palace,73
+13,Ramada by Wyndham Udaipur Resort and Spa,"1,135"
+14,Shiv Niwas Palace by HRH Group of Hotels,496
+15,juSTa Rajputana,91
+16,Radisson Udaipur,109
+17,Hotel Udai Kothi,97
+18,Kotra Haveli A Boutique Hotel By The Lake Pichola,41
+19,The Fern Residency Udaipur,48
+20,RAAS Devigarh,271
+21,Jaiwana Haveli,50
+22,Hotel Meenakshi Udaipur,14
+23,Madri Haveli,59
+24,Bujera Fort,268
+25,Udaigarh,40
+26,Hotel Boheda Palace,32
+27,Gorbandh Hotel,15
+28,Devra Udaipur,80
+29,Tatsaraasa Resort and Spa Udaipur,84
+30,Inder Residency Udaipur,87
+31,Swaroop Vilas - Lake Facing Boutique Hotel,80
+32,Keshav Spa And Resort,134
+33,Hotel Raj Kuber,72
+34,Bamboo Saa Resort & Spa,87
+35,Hotel Aashiya Haveli,31
+36,Ram Pratap Palace By Fateh Collection ,61
+37,Hotel Udai Median,38
+38,Bloom Boutique - Lake Pichola Heritage Hotel,78
+39,Hotel Ashwin,671
+40,Hotel Shree Narayana,39
+41,Howard Johnson by Wyndham Udaipur Roop Nagar,168
+42,Amantra Comfort Hotel,66
+43,Pride Hotel Udaipur,43
+44,Shouryagarh Resort & Spa,67
+45,Amantra Shilpi Resort & Spa,78
+46,Aravali Silence Lakend Resorts & Adventures,195
+47,Palm Valley Svasti Resort,37
+48,Treebo Trend Vishvam Residency,35
+49,Akshay Niwas,63
+50,Devraj Villa-A Luxury Homestay with Pool,134
+51,Vijay Garh Resort Udaipur,44
+52,Shree Kanak Hotel,60
+53,Horizon Hotel,38
+54,Hotel Grand Bhagwat,35
+55,"The Artist House, Udaipur",71
+56,Hotel Sanobar,31
+57,Shree Jagdish Mahal Heritage Hotel,18
+58,Hotel Brahma Niwas by the Lake,60
+59,Treebo Trend Hotel Jai Mahal,30
+60,Ramee Royal Resort & Spa Udaipur,77
+61,Hotel Mumbai House,74
+62,Hotel Mandovin,60
+63,Shikarbadi Hotel,67
+64,Regenta Central Udaipur,55
+65,Rangniwas Palace Hotel,31
+66,Moustache Udaipur Luxuria,145
+67,Shahpura Dev Panache,52
+68,Hotel Shiv Villas,67
+69,Hotel  Suryansh,33
+70,Treebo Trend Meera,40
+71,Little Peepal House,67
+72,Sargam Sadan,38
+73,Devendra Garh,36
+74,Hotel Sarovar on Lake Pichola,74
+75,Le ROI Udaipur,29
+76,Hotel Hadi Rani Palace,25
+77,Ambay Villa,34
+78,Treebo Tryst SR House,46
+79,Keekoo Udaipur,47
+80,Uddhav Vilas,34
+81,Hotel Udai Palace,27
+82,Hotel Hanuman Ghat,18
+83,Hotel Royal Pratap Niwas,25
+84,FabHotel White House,22
+85,Hotel The Tiger,34
+86,Oriental Palace Resorts,43
+87,Shourya Residency,39
+88,Hotel Vinayakam,40
+89,Hotel Panna Vilas Palace,65
+90,Jai Villa Homestay,47
+91,Hotel Broadway Udaipur,106
+92,The Udai Bagh,83
+93,The Sierra-A Luxury Stay,67
+94,Hotel Dayal,26
+95,Treebo Trend Opulence Inn,38
+96,Hill resort & spa,42
+97,Hotal Devraj Niwas on Lake Pichola Udaipur,25
+98,Lords Inn Udaipur,51
+99,Araliayas Resorts Private Limited,64
+100,Treebo Trend Sandal Inn,31
+101,Gazebo Inn Resort,41
+102,RnB Shivani Udaipur,52
+103,Hotel North Star,27
+104,Hotel The Solitaire,27
+105,Cambay Resort Udaipur,43
+106,Hotel Gyangarh,33
+107,Indra Niwas,25
+108,Hotel Dream Palace,45
+109,Hotel mukund villas,30
+110,Padmini Bagh Resort,161
+111,FabHotel Himanshi,25
+112,Dreams Resort Udaipur,128
+113,Avins Beacon,45
+114,The White Fresco,42
+115,Treebo Trend Vallab Vilas By 7 Horses,28
+116,Hopp Inn,19
+117,Hotel Ashish Palace,23
+118,The Lake View Palace,53
+119,The Park Classic Udaipur,12
+120,Rendezvous @ Family Vacay,333
+121,Hotel Mewar Inn,23
+122,Empire Palace,30
+123,Hotel Devansh by Inspira,30
+124,Ashapura Hotel,15
+125,Hotel Royal Dezire,21
+126,FAMILY VACAY @ BOUTIQUE GARDEN FARM,200
+127,Secluded nature traditional Home stay Udaipur Rajasthan India,228
+128,Viaan - A Lake View Hotel,28
+129,Treebo Trend Spirit Residency,29
+130,Agariya Haveli,25
+131,Nine Hill Villa - 2BHK Private Villa with Pool,111
+132,Anagha Homestay home from home,299
+133,junoon      A beautiful and serene place  with all amenities,75
+134,Luxury 5 star 5 br home with Pool & Stunning View,202
+135,Hotel Krishna Raj,28
+136,Venus Heritage Homestay,70
+137,Double studio @ Anagha Homestay,74
+138,Queen’s Town is a Beautiful Ambient 6 Bedrooms Villa adjoin to Fatehsagar Lake,135
+139,Rajpura House - Private 1st floor with balconies ,50
+140,Hotel Royal Palm,26
+141,White House Homestay Udaipur,22
+142,A cozy and cool place ,50
+143,Aura Midtown In India,45
+144,"A.C. room with swimming pool (cool,chill, relax)",17
+145,Perfect escape with a mountain view @ Anagha Homestay,38
+146,3 Bedroom Condo@Tiger Homestay,20
+147,"Rudra home stay. "" Visit"" us as a guest and leave as family member ",20
+148,Titardi Garh- Heritage Century from the 18th century,40
+149,Venus Heritage Homestay,38
+150,City centre beautiful clean AC rooms,25
+151,Belvédère : Private 3-Bedroom Apartment,135
+152,Traditional Saloon @ Anagha Homestay,37
+153,3 Bedroom Condo near Fatehsagar Lake,23
+154,Get involved in the nature’s bliss.,17
+155,Hotel Paradise inn,20
+156,FAMILY VACAY IN GREEN SETTINGS,80
+157,Colonels Home stay - A home away from home. Set in a scenic natural environment.,56
+158,Piggy Hostel Udaipur,40
+159,Hotel Janak Vilas,42
+160,Hostel Mantra,46
+161,Dreamyard Udaipur - Hostel,16
+162,Spring Sky Udaipur by ShriGo Hotels,28
+163,Rising Shemesh,17
+164,Moustache Leelaghar Eco-Retreat,47
+165,Gogunda Palace,155
+166,Jhadol Safari Resort,75
+167,juSTa Brij Bhoomi Nathdwara,54
+168,ShriGo Hotel Nathdwara,36
+169,Shree Vallabh Vilas Lords Plaza Nathdwara,70
+170,Hotel Shivansh Inn by Sky Stays,13
+171,Hotel Shree Pratham Milan,15
+172,Hotel Ashapura Palace by Sky Stays,17
+173,Hotel Atithi Bhawan by Sky Stays,14
+174,Crimson Park Shripriya Hotel,36
+175,The Sky Imperial  Hotel Gopal Darshan,52
+176,Garden View Hotel,29
+177,Hotel Hilltop Palace,
+178,Shikar Oudi Jungle Villa,
+179,Hotel Charan Kamal,
+180,Hariyav Garh Resort,
+181,Bhanwar Niwas,
+182,"Tree of Life Vantara Resort, Udaipur",
+183,Capital O 44207 Hotel Krishnaraj,
+184,"Trident, Udaipur",
+185,Dasmaya Resort,
+186,Jheel Hotel and Restaurent,
+187,Capital O 35703 Hotel Sarovar Grand,
+188,Vatsalya Vihar,
+189,Fateh Garh Resort by Fateh Collection,
+190,Hotel Harsh Palace,
+191,Kaya Valley Resort,
+192,Nagar Haveli,
+193,Arvanah Rooms,
+194,Hotel Dhola Ghat Haweli,
+195,Opal Club Resort - Udaipur,
+196,G G Holiday Homes Innovating Hospitality,
+197,Hotel Jaisingh Garh By Innovating Hospitality,
+198,Hotel Bhanwar Niwas Udaipur,
+199,Hotel Bhopal Palace Udaipur,
+200,Spectrum Resort Spa & Convention,
+201,Rajdarshan,
+202,Villa Le Palms Resort & Spa,
+203,Harmony Blue Udaipur,
+204,Hotel The Pannadhay Palace,
+205,Hotel The Sunrise,
+206,Chunda Palace,
+207,Hotel Elegance Villa -Udaipur,
+208,Hotel Raj Palace,
+209,HOTEL AMRIT MAHAL Udaipur,
+210,Hotel Oasis Park,
+211,FabExpress Mewar Darshan,
+212,Jagmandir Island Palace,
+213,Karni Fort-A Heritage Hotel Near Udaipur,
+214,Hotel Paheli Palace,
+215,Hotel Minerwa on Lake Pichola,
+216,GenX Udai Valley Resort,
+217,Hotel Darshan Palace - Udaipur,
+218,The Rising,
+219,Tulip Le Grand,
+220,Hotel Seventh Square,
+221,Aroma Home Stay,
+222,Raffles Udaipur,
+223,OYO 30226 Hotel Darshan Palace,
+224,Zade Mount View,
+225,GG Residency,
+226,OYO Home 22469 Heritage City Palace View Stay Bhatiyani Chohatta,
+227,Hotel Sarovar Grand,
+228,Hotel Siddhartha Inn,
+229,United-21 Lake City Resort,
+230,OYO 37341 Heritage High,
+231,Sky Blue Guest House,
+232,Heritage Golden Castle,
+233,Saffire Suites,
+234,Jaisingh Garh Hotel and Resort,
+235,OYO 22052 Hotel Kingdom Palace,
+236,Down Town,
+237,Hotel Divya palace & Restaurent,
+238,Hotel Suraj Palace,
+239,Gorakh Shyam Resort,
+240,Kanhaiya Home Stay,
+241,Hotel Reivera,
+242,Hotel Sandal Inn,
+243,SS Hotel,
+244,Black Pepper Guest House,
+245,OYO 18262 Hotel White Tulip,
+246,Kurabar Kothi,
+247,Hotel Fateh Villa,
+248,Sudishti Holiday Homes and Farms,
+249,Bhanwar Vilas Guest House,
+250,Hotel Opera Inn,
