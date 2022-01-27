@@ -1,201 +1,301 @@
 hotel_id,hotel_name,hotel_price
-1,Jaipur Marriott Hotel,94
-2,"ITC Rajputana, A Luxury Collection Hotel, Jaipur",72
-3,Hilton Jaipur,63
-4,"Trident, Jaipur",74
-5,Jaipur Marriott Hotel,94
-6,Hilton Jaipur,63
-7,"ITC Rajputana, A Luxury Collection Hotel, Jaipur",72
-8,"Holiday Inn Jaipur City Centre, an IHG Hotel",66
-9,"Four Points by Sheraton Jaipur, City Square",61
-10,The Oberoi Rajvilas,362
-11,5 BY OYO METROPOLITAN,75
-12,Rambagh Palace,499
-13,"Crowne Plaza Jaipur Tonk Road, an IHG Hotel",54
-14,"Four Points by Sheraton Jaipur, City Square",61
-15,Umaid Bhawan - A Heritage Style Boutique Hotel,63
-16,Le Méridien Jaipur Resort & Spa,114
-17,Radisson Jaipur City Center,60
-18,"Devi Ratn, Jaipur -IHCL SeleQtions",208
-19,Chokhi Dhani Resort Jaipur,114
-20,The Leela Palace Jaipur,201
-21,Radisson Blu Jaipur,74
-22,Umaid Mahal - A Heritage Style Boutique Hotel,46
-23,Buena Vista Luxury Resort,322
-24,Alsisar Haveli - A Heritage Hotel,101
-25,Rajmahal Palace RAAS,516
-26,Royal Heritage Haveli,142
-27,Ramada by Wyndham Jaipur,90
-28,Umaid Haveli Hotel & Resorts,108
-29,Ramada by Wyndham Jaipur North,57
-30,Doubletree by Hilton Jaipur Amer,161
-31,Sarovar Premiere Jaipur,60
-32,Narain Niwas Palace,88
-33,Zone by The Park Bani Park Jaipur,86
-34,Bissau Palace,67
-35,ibis Jaipur Civil Lines Hotel,47
-36,Pearl Palace Heritage,39
-37,Hotel Royal Orchid,56
-38,Leisure Inn Grand Chanakya,30
-39,Vesta International,32
-40,The Fern Residency Jaipur,29
-41,"Lemon Tree Premier, Jaipur",94
-42,Clarion Inn Jaipur,94
-43,"Bara Bungalow Kalwar, Jaipur - A Rosakue Collection",94
-44,Crimson Park - The Heritage,67
-45,Om Niwas Suite Hotel,50
-46,Hotel Empire Regency,60
-47,Khas Bagh,73
-48,"Tree of Life Chhota Mahal, Amer, Jaipur",96
-49,Hotel De Nada,58
-50,Barwara Kothi,67
-51,Comfort Inn Sapphire,47
-52,The Fern - An Ecotel Hotel Jaipur,64
-53,Sarovar Portico Jaipur,107
-54,Dera Rawatsar - Heritage Hotel,50
-55,County Inn Hotel,97
-56,Khandwa Haveli,43
-57,Royal Orchid Central Jaipur,53
-58,Hotel 360,27
-59,Sanskar Prime Hotel,42
-60,Hotel Cordon Vay,19
-61,Pink Pearl Resort and Fun City,31
-62,Hotel Silver Pride,25
-63,Hotel Royal Empire,51
-64,Kapish Home - Heritage Virtuous Stay,29
-65,Laxmi Palace Heritage Boutique Hotel,36
-66,Hotel Dev Villas,36
-67,Hotel Triveni Residency,16
-68,Broadway Inn,42
-69,Clarks Amer,75
-70,Villa 243,44
-71,Jagrati Ananta Express,50
-72,Hotel Vimal Heritage,38
-73,Hotel Sarang Palace,21
-74,Royal View Hotel,19
-75,Shahpura Residency,32
-76,Anuraag Villa,24
-77,Hotel Gandharva - A Green Hotel,45
-78,KK Royal Hotel & Convention Centre,111
-79,OYO 22966 Hotel Raj Niwas,33
-80,"Lords Plaza, Jaipur",27
-81,Suryaa Villa - A City Centre Hotel,47
-82,hotel S57,29
-83,Hotel Marigold Jaipur,51
-84,The Zest,18
-85,Capital O 14864 Hotel Satyam Inn,49
-86,Hotel Sumaditya,31
-87,Jaipur Hotel New,24
-88,Hotel Rajlaxmi Palace,28
-89,Jaipur Inn,27
-90,Mandawa Haveli,41
-91,Hotel Grand Lotus Inn,27
-92,Nirwana Hometel Jaipur - A Sarovar Hotel,39
-93,The Gold Palace & Resorts,60
-94,Ginger Jaipur,47
-95,Treebo Trend Airport View,22
-96,Treebo Trend Resolute,19
-97,Hotel The Livin,58
-98,Hotel Istana Inn,23
-99,Hotel SK Grand,97
-100,Trimrooms Mount Blue,33
-101,Palm34,47
-102,Khatu Haveli,57
-103,Hotel The Ashapurna,43
-104,Shakun Hotels & Resorts Jaipur,107
-105,Umaid Bhawan,109
-106,Hotel Neelam Paradise,28
-107,Arya Niwas,32
-108,Jasoda Heritage by Keshav Global Hotels,24
-109,Raya Inn,36
-110,The Wallstreet A Busines Hotel,35
-111,Hotel Rajasthan Palace Jaipur,61
-112,Hotel RR 62,40
-113,Khandela Haveli A Heritage Boutique Hotel,54
-114,Jai Niwas,32
-115,Devraj Niwas Boutique Hotel,52
-116,Tara Niwas,19
-117,Hotel Fort Chandragupt Jaipur,32
-118,The Lodge B & B,31
-119,OYO 35787 Hotel Lily Bay Prime,40
-120,Golden Eagle Hotels & Resorts,38
-121,Krishna Palace,17
-122,Hotel Corporate Inn,27
-123,Hotel Sweet Dream,40
-124,OYO 15892 Friends Residency,44
-125,Royale Lalit Hotel Jaipur,64
-126,Hotel Las Vegas,39
-127,OYO 9973 Hotel Green Valley,60
-128,Hotel Marc Inn,30
-129,Hotel Indo Prime,43
-130,Le Amour Inn,50
-131,Hotel Vrisa,58
-132,Hotel Sunder Palace-a heritage styled boutique hotel,14
-133,Hotel Sun City Plaza,30
-134,OYO 38172 The Lodge,41
-135,"Red Fox Hotel, Jaipur",75
-136,Milestone 251,22
-137,FabExpress Travelers Lodge,27
-138,Hotel The Grand Kukas,47
-139,Treebo Trend Woodsvilla Suites Bapu Nagar,33
-140,All Seasons Homestay,28
-141,Hotel Mohit Palace,38
-142,Hotel Sarvmangla Garden,34
-143,Vesta Maurya Palace,27
-144,Hotel Mahadev resency,19
-145,Hotel Shikha,25
-146,OYO 24565 Hotel Morgan,14
-147,Hotel Myriad Inn,45
-148,Hotel Pearl Palace,27
-149,Regenta Inn Jaipur,40
-150,Castle Kanota,54
-151,The Raas Mahal,54
-152,Hotel Metro Inn,39
-153,The Timber Garden Adventure Club,54
-154,Bikaner Haveli,40
-155,OYO 22942 Hotel Opal,51
-156,Hotel Kalyan,15
-157,Hotel Saba Haveli,68
-158,OYO 2730 Hotel Ethnic Residency,85
-159,OYO 11389 Hotel NG Palace,33
-160,Hotel Metro View,17
-161,The Narayans,54
-162,Treebo Trend Bliss Raja Park,20
-163,R41- A Boutique Hotel,33
-164,OYO 1049 Nirman Nagar,69
-165,OYO 1143 Hotel RDB Palace,26
-166,FabHotel Sapphire Inn Mansarovar,30
-167,Rajputana Haveli,22
-168,Hotel Classic Inn,15
-169,Wind Palace hotel,42
-170,BrijNest Suites,169
-171,Shivoham Yoga retreats,36
-172,OYO 15154 Hotel After Hours,41
-173,Hotel Ankur Palace,15
-174,Hotel Thikana Palace,13
-175,OYO 28054 Hotel Suraj Villa,12
-176,Heritage Haveli - A Stay Home,22
-177,Hotel Rockland,33
-178,Wood Garden Hide,60
-179,Hotel The Queens,17
-180,OYO 1199 Hotel Maharaja Residency,63
-181,Jaipur Residences 1,30
-182,V One pride,55
-183,Hotel Sajjan Niwas,34
-184,OYO 3311 Hotel Apple 9,14
-185,OYO 7152 Gumaan Heritage,17
-186,Hotel VB Heritage Heights,35
-187,Rawla Mrignayani Palace,13
-188,Skyzone Greens Resort,34
-189,Hotel Royal Amer City,16
-190,Hotel Gitanjali,14
-191,Kalyan Heritage,18
-192,Chitrakatha,13
-193,OYO 22544 Hotel Vijeet Palace,14
-194,Treebo Trip Tordi Haveli,40
-195,Hotel Golden Heritage,14
-196,Konark Palace hotel,12
-197,Hotel Dharohar Palace,12
-198,OYO 452 Hotel City Inn,83
-199,Raj Regency,17
-200,Hotel Sukh Vilas Jaipur,17
+1,"ITC Rajputana, A Luxury Collection Hotel, Jaipur",84
+2,Jaipur Marriott Hotel,112
+3,Hilton Jaipur,91
+4,"Trident, Jaipur",83
+5,The Oberoi Rajvilas,381
+6,Umaid Bhawan - A Heritage Style Boutique Hotel,51
+7,Radisson Jaipur City Center,64
+8,Umaid Mahal - A Heritage Style Boutique Hotel,40
+9,"Four Points by Sheraton Jaipur, City Square",94
+10,"Devi Ratn, Jaipur -IHCL SeleQtions",160
+11,5 BY OYO METROPOLITAN,153
+12,Radisson Blu Jaipur,94
+13,"Crowne Plaza Jaipur Tonk Road, an IHG Hotel",99
+14,Indana Palace Jaipur,93
+15,Royal Heritage Haveli,146
+16,Umaid Haveli Hotel & Resorts,51
+17,Narain Niwas Palace,113
+18,Pearl Palace Heritage,39
+19,Ramada by Wyndham Jaipur,339
+20,Hotel 360,27
+21,"Tree of Life Chhota Mahal, Amer, Jaipur",96
+22,Vesta International,26
+23,Hotel Triveni Residency,30
+24,Hotel Empire Regency,33
+25,The Fern Residency Jaipur,56
+26,Dera Rawatsar - Heritage Hotel,40
+27,"ITC Rajputana, A Luxury Collection Hotel, Jaipur",84
+28,Jaipur Marriott Hotel,112
+29,Ramada by Wyndham Jaipur North,80
+30,"Crowne Plaza Jaipur Tonk Road, an IHG Hotel",99
+31,Zone by The Park Bani Park Jaipur,47
+32,Barwara Kothi,48
+33,Hilton Jaipur,91
+34,Royal Orchid Central Jaipur,60
+35,ibis Jaipur Civil Lines Hotel,51
+36,County Inn Hotel,96
+37,Crimson Park - The Heritage,107
+38,Hotel Cordon Vay,19
+39,Hotel Royal Empire,51
+40,Hotel Royal Orchid,66
+41,Sanskar Prime Hotel,28
+42,Khandwa Haveli,62
+43,Khas Bagh,86
+44,Sarovar Portico Jaipur,107
+45,Royal View Hotel,19
+46,hotel S57,32
+47,Hotel Gandharva - A Green Hotel,45
+48,Jaipur Hotel New,29
+49,"Four Points by Sheraton Jaipur, City Square",94
+50,Treebo Trend Airport View,24
+51,Treebo Trend Hotel New Rockwell,23
+52,Hotel Vrisa,55
+53,Ramada by Wyndham Jaipur Jaisinghpura,63
+54,Treebo Trend Resolute,23
+55,"Lords Plaza, Jaipur",24
+56,Hotel Rajlaxmi Palace,24
+57,KK Royal Hotel & Convention Centre,62
+58,Hotel Istana Inn,23
+59,Hotel Marigold Jaipur,187
+60,Villa 243,669
+61,Jasoda Heritage by Keshav Global Hotels,24
+62,Umaid Bhawan,91
+63,Khatu Haveli,45
+64,Le Méridien Jaipur Resort & Spa,162
+65,Regenta Inn Jaipur,42
+66,Arya Niwas,28
+67,Mahal Rajwada Resort,42
+68,Hotel The Livin,40
+69,Rajputana Diaries,15
+70,Tara Niwas,19
+71,Castle Kanota,92
+72,OYO 35787 Hotel Lily Bay Prime,61
+73,Hotel The Grand Kukas,56
+74,"Bara Bungalow Kalwar, Jaipur - A Rosakue Collection",128
+75,Hotel Rock land By Tuma Hotels,33
+76,Cambay Grand,31
+77,OYO 1049 Nirman Nagar,126
+78,Devraj Niwas Boutique Hotel,28
+79,Hotel Marc Inn,25
+80,Milestone 251,26
+81,Hotel Sarang Palace,22
+82,Clarks Amer,334
+83,Hotel Sumaditya,31
+84,"brand new,2BHK ,swimming pool,zacuzzi, Gym,Spa,Garden,secure ,gated,pvt. parking",75
+85,Hotel The Queens,24
+86,OYO 2730 Hotel Ethnic Residency,84
+87,Hotel Classic Inn,27
+88,Hotel Mahadev resency,19
+89,Hotel Pearl Palace,27
+90,Nirwana Hometel Jaipur - A Sarovar Hotel,38
+91,R41- A Boutique Hotel,45
+92,Treebo Trend Bliss Raja Park,23
+93,Treebo Trend Woodsvilla Suites Bapu Nagar,28
+94,Hotel Rockland,41
+95,Golden Eagle Hotels & Resorts,27
+96,Hotel VB Heritage Heights,35
+97,Hotel Sarvmangla Garden,37
+98,Vesta Maurya Palace,21
+99,Hotel Gitanjali,16
+100,Hotel Vimal Heritage,27
+101,Hotel Royal Amer City,16
+102,Sarovar Premiere Jaipur,55
+103,Raj Regency,30
+104,Doubletree by Hilton Jaipur Amer,80
+105,OYO 22966 Hotel Raj Niwas,63
+106,Hotel Neerja Inn,47
+107,Tuma Club House,31
+108,Rawla Mrignayani Palace,13
+109,Hotel Sukh Vilas Jaipur,16
+110,Talai Bagh Palace,94
+111,Bissau Palace,67
+112,OYO 452 Hotel City Inn,82
+113,"Lemon Tree Premier, Jaipur",120
+114,Shahpura Residency,47
+115,Hotel Neelam,24
+116,Hotel Moon Light Palace Jaipur,12
+117,The Lodge B & B,35
+118,V One pride,37
+119,Krishna Palace,20
+120,Ikaki Niwas,85
+121,Konark Palace hotel,12
+122,Treebo Trend Grande Azure,24
+123,Kukas Guest House,11
+124,Mahal  Khandela :Enchanting Hotel for Your Stay in Jaipur - family- operated,75
+125,Suryaa Villa - A City Centre Hotel,53
+126,BrijNest Suites,62
+127,Hotel Green Valley,16
+128,Hotel Silver Pride,36
+129,Laxmi Palace Heritage Boutique Hotel,29
+130,Raya Inn,40
+131,Hotel Sun City Plaza,29
+132,Chitrakatha,13
+133,OYO 352 Hotel DRS 8586 Haveli,112
+134,Hotel Shyam Paradise By Tricolour,47
+135,Heritage spacious Room @ walled city,29
+136,Khandela Haveli A Heritage Boutique Hotel,40
+137,The Zest,14
+138,Krishna Palace: A Heritage Private Deluxe Room with Private Bathroom,20
+139,Hotel Mohit Palace,114
+140,Vishal Villa - Suite 3,25
+141,Treebo Trend Natraj Jaipur,24
+142,Sanskar Hotel,33
+143,Hotel Las Vegas,43
+144,LMB Hotel,47
+145,Trimrooms Mount Blue,39
+146,Hotel Rajasthan Palace Jaipur,96
+147,OYO 9973 Hotel Green Valley,72
+148,Capital O 17241 Hotel Mayra,87
+149,OYO 38172 The Lodge,67
+150,OYO 15892 Friends Residency,71
+151,Homely  comfortable  Hotel Vacation for large and small groups/families,20
+152,Hotel Saba Haveli,74
+153,Hotel Shikha,19
+154,Jai Niwas,30
+155,HOTEL PUROHIT GOOD HOTEL IN JAIPUR,12
+156,Samskara Resort & Spa Jaipur,201
+157,Hotel Golden Heritage,13
+158,FabExpress Travelers Lodge,27
+159,OYO 22942 Hotel Opal,63
+160,OYO 11389 Hotel NG Palace,63
+161,The Byke Grassfield Resort,38
+162,Bikaner Haveli,40
+163,Capital O 7197 Cordon Vay,31
+164,Divine the Boutique Hotel,24
+165,Umaid Residency - A Regal Heritage Home,33
+166,OYO 1143 Hotel RDB Palace,40
+167,The Saneer,36
+168,Treebo Trip Tordi Haveli,50
+169,FabHotel Sapphire Inn Mansarovar,30
+170,Sterling Atharva Jaipur,44
+171,Hotel Sweet Dream,15
+172,Amer City Heritage Hotel,40
+173,Hotel Bony Sunrise,15
+174,Hotel Dharohar Palace,13
+175,Shri Sai Residency,17
+176,FabHotel Pink Palace,33
+177,Hotel Muskan Palace,27
+178,Hotel Kanchandeep,14
+179,Shahar Palace,22
+180,Hotel Metropolitan,27
+181,The Bayan Elegance,35
+182,TGI Apple Inn,49
+183,Nangi's Pride,22
+184,Hotel Bharat Palace,4
+185,Hotel Vacation,7
+186,Hotel Satkar,15
+187,Souvenir Peppermint,100
+188,Hotel Paradise,11
+189,Hotel Hayat Rabbani,27
+190,The Theme Hotel Jaipur,60
+191,Renest Jaipur,25
+192,66 Residency - A Boutique Hotel,45
+193,Hotel Hawa Mahal,24
+194,Sapphire World by ShriGo Hotels,29
+195,Hotel Golden Ram Vilas,27
+196,Treebo Trend The Anchorage Malviya Nagar,21
+197,FabHotel Aqua,35
+198,OYO 2072 Hotel Indigo Heritage,30
+199,Hotel Yash Regency,33
+200,Hotel Ganga Kripa,8
+201,Luxury Room with Patio,120
+202,"""Jaipur Apartment Stays"" Secluded 2 BHK Apartment Leafy central Civil Lines",27
+203,Wood Garden Hide,60
+204,Haveli Kalwara,30
+205,Rajmahal Palace RAAS,471
+206,OYO 14537 Hotel Amer Haveli,28
+207,Luxury Penthouse Apartment in Jaipur | Private Terrace Included,80
+208,Luxurious Apartment with Artistic Interiors,22
+209,"Vacation Pod (Wi-fi, Terrace, Kids Play Room) 2BHK Independent House",80
+210,"UTNT The Farm, Jaipur",198
+211,"Cheerful, Spacious Private Apt in ★ location",64
+212,2 Bedroom Accommodation in a Luxury Villa with Terrace Garden,45
+213,All Seasons Homestay,29
+214,Nagpals Retreat - Home away from home,45
+215,Ehsaas... A feeling of happiness,90
+216,The Pink City Travellers Home-A spacious 3 Bedroom bungalow with Breakfast,62
+217,Fully Smart Automated Luxury Home,72
+218,Ehsaas...A feeling of happiness,84
+219,Om Niwas Suite Hotel,63
+220,Luxurious apartment with artistry interiors,22
+221,Traditional courtyard Haveli near historic places and in heart of the pink city,100
+222,Hamir House - An amalgamation of elegance and comfort,69
+223,Moustache Jaipur,15
+224,Luxury Penthouse Apartment with Private Terrace,75
+225,Harnawa Haveli - Home Away from Home,30
+226,Vishal Villa - Suite 2,20
+227,Elegant Spacious Room near WTP,47
+228,Old Traditional heritage house with Royal feel located in main pink city,50
+229,Hotel Savi Regency,20
+230,Marigold Inn- Homestay,50
+231,A heritage home with a beautiful garden.,35
+232,Sohnaz Homestays - 2 BHK Staycation near International Airport,60
+233,The Nest Family Apartment,40
+234,"""Jaipur Apartment Stays"" S2 Secluded 2 BHK Apartment Leafy central Civil Lines",27
+235,"Complete home with kitchen,peaceful,independent",13
+236,Jaipur Sundeck is a family run homestay which is connected to all major places,17
+237,"Sunshine nest located right at the center of city. nominal price, memorable sta",14
+238,Jaipur 1727 Homestay,15
+239,Farm Stay  @  Jaipur,35
+240,Gulkandi niwas welcome u,18
+241,Luxury apartment near Jaipur airport,22
+242,Pet friendly Farm Stay in Jaipur,35
+243,Vice  Versa Homestay,12
+244,Palm34,40
+245,Govind Prakash Niwas,18
+246,Kapish Home - Heritage Virtuous Stay,24
+247,White tulips home stay ,16
+248,Atithi Guest House,21
+249,Vishal Villa - Suite 1,20
+250,goSTOPS Jaipur,50
+251,House of Backpackers,27
+252,Hotel Sugandh Retreat,16
+253,Hoztel Jaipur,13
+254,"HOSTEL, HOME, CAFE, HANGOUT :- CHECK IN 24 HOUR BASE.",9
+255,The Imperial Farm Retreat Jaipur - A weekend Gateway,101
+256,Mandawa Haveli,
+257,Alsisar Haveli - A Heritage Hotel,
+258,Hotel Amer Classic,
+259,SMS Hotel,
+260,"Holiday Inn Jaipur City Centre, an IHG Hotel",
+261,Jai Mahal Palace,
+262,The LaLiT Jaipur,
+263,Hotel Metro Inn,
+264,The Wallstreet A Busines Hotel,
+265,Hotel Devens,
+266,Zone Palace by The Park,
+267,Hotel Krishna Boutique Stay Jaipur,
+268,Hotel Mansingh,
+269,Hotel Shiv Palace,
+270,Grand Kukas Residency,
+271,Kailrugji - A City Centre Hotel,
+272,Hotel Kalyan,
+273,Hotel Stay Bridge,
+274,Hotel Diggi Palace,
+275,FabHotel 7 Nights,
+276,Mark Inn by Black Tie,
+277,Hotel Black Hole,
+278,Hotel Madhav Palace,
+279,Hotel Chinar,
+280,Hotel Jaipur Central,
+281,Anuraag Villa,
+282,Hotel The Star Leaf Prime,
+283,Hotel Sky Heights,
+284,Jas Vilas,
+285,FabHotel K Mahaveer,
+286,FabHotel K Mahaveer,
+287,Pink Elephant,
+288,Neerja Inn,
+289,The La Shivalika,
+290,Hotel shekhawati jaipur,
+291,Nokha House,
+292,Nirbana Palace - A Heritage Hotel,
+293,FabHotel Jaipur House,
+294,Hotel Jaipur Heriatge,
+295,Hotel Shree Residency,
+296,Pandya Niwas,
+297,Leisure Inn Grand Chanakya,
+298,Chokhi Dhani Resort Jaipur,
+299,Hotel De Nada,
+300,Bara Bungalow Amer,
