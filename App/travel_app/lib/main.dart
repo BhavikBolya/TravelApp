@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:TravelApp/travel_app/lib/screens/home_screen.dart';
+import 'package:travel_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,18 +31,6 @@ class MyApp extends StatelessWidget {
       ),
       home: HomeScreen(),
     );
-  }
-}
-
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
   }
 }
 
