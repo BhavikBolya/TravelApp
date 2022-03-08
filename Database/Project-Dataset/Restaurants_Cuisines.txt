@@ -1,0 +1,93 @@
+1 Mithai
+2 North Indian
+3 South Indian
+4 Street Food
+5 Chinese
+6 Continental
+7 Momos
+8 Mughlai
+9 Italian
+10 Finger Food
+11 Mexican
+12 Fast Food
+13 Burger
+14 Beverages
+15 Cafe
+16 Rajasthani
+17 Asian
+18 BBQ
+19 Biryani
+20 Rolls
+21 Lebanese
+22 Pizza
+23 Kebab
+24 Thai
+25 Modern Indian
+26 European
+27 Spanish
+28 Iranian
+29 Japanese
+30 Korean
+31 Awadhi
+32 Lucknowi
+33 Afghan
+34 Turkish
+35 Tea
+36 Ice Cream
+37 Desserts
+38 Maharashtrian
+39 Bar Food
+40 Indian
+41 American
+42 Coffee
+43 Sandwich
+44 Kashmiri
+45 Seafood
+46 Frozen Yogurt
+47 Belgian
+48 Bakery
+49 Healthy Food
+50 Salad
+51 Hyderabadi
+52 Bubble Tea
+53 Juices
+54 Mediterranean
+55 Hot dogs
+56 Gujarati
+57 Paan
+58 German
+59 Brazilian
+60 Roast Chicken
+61 Charcoal Chicken
+62 Israeli
+63 Singaporean
+64 Wraps
+65 Bar
+66 Pub
+67 Healthy
+68 Fast food
+69 Barbecue
+70 Vegetarian Friendly
+71 International
+72 None
+73 Austrian
+74 African
+75 Tibetan
+76 Diner
+77 Australian
+78 Middle Eastern
+79 Malaysian
+80 Arabic
+81 South American
+82 Colombian
+83 Soups
+84 Afghani
+85 Grill
+86 Southern-Italian
+87 French
+88 Indonesian
+89 British
+90 Deli
+91 Eastern European
+92 Armenian
+93 Contemporary
