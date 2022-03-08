@@ -1,0 +1,27 @@
+0 Air conditioning
+1 Spa
+2 Free WiFi
+3 Parking included
+4 Laundry
+5 Pet friendly
+6 Hot Tub
+7 Pool
+8 Breakfast included
+9 Restaurant
+10 Breakfast available
+11 Room service
+12 Housekeeping
+13 Business services
+14 Free airport shuttle
+15 24/7 front desk
+16 Babysitting
+17 Gym
+18 Kitchen
+19 Bar
+20 Restaurant temporarily unavailableRestaurant
+21 Pool temporarily unavailablePool
+22 All inclusive
+23 Parking available
+24 Outdoor Space
+25 Barbecue grill
+26 Fireplace

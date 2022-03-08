@@ -1,0 +1,16 @@
+0 Adventure and Outdoor
+1 Attractions
+2 Water Activities
+3 Shows and Concerts
+4 History and Culture
+5 Private and Custom Tours
+6 Tours and Day Trips
+7 Food, Drink and Nightlife
+8 Classes and Workshops
+9 Transportation
+10 Air, Helicopter and Balloon Tours
+11 Holiday and Seasonal Tours
+12 Weddings and Honeymoons
+13 Shopping and Fashion
+14 Wildlife and Nature
+15 Cruises and Boat Tours
