@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/home_screen.dart';
+import 'package:travel_app/screens/destination.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,9 +28,10 @@ class MyApp extends StatelessWidget {
         //primarySwatch: Colors.yellow,
         primaryColor: Color(0xFFFDD91F),
         accentColor: Color(0xFFFDD91F),
-        scaffoldBackgroundColor: Color(0x00000000),
+        scaffoldBackgroundColor: Color(0xFFFFFFFF),
       ),
       home: HomeScreen(),
+      //home: DestinationScreen(),
     );
   }
 }
