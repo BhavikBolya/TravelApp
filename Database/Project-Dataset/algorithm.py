@@ -1,4 +1,6 @@
+from unicodedata import category
 import pandas as pd
+import random
 
 input_cat = []
 print('''0 Adventure and Outdoor
@@ -18,7 +20,9 @@ print('''0 Adventure and Outdoor
 14 Wildlife and Nature
 15 Cruises and Boat Tours\n''')
 
-input_cat = input("Select any 5 number").split()
+input_cat = input("Select any 5 number - ").split()
+input_days = int(input("Enter number of days : "))
+input_city = input('Enter city: ')
 cat = []
 for i in input_cat:
     if i== '1':
@@ -41,8 +45,31 @@ for i in input_cat:
         cat.append("Classes and Workshops")
     if i== '9':
         cat.append("Transportation")
+    if i== '10':
+        cat.append("Air, Helicopter and Balloon Tours")
+    if i== '11':
+        cat.append("Holiday and Seasonal Tours")
+    if i== '12':
+        cat.append("Weddings and Honeymoons")
+    if i== '13':
+        cat.append("Shopping and Fashion")
+    if i== '14':
+        cat.append("Wildlife and Nature")
+    if i== '15':
+        cat.append("Cruises and Boat Tours")
 
 
 print(cat)
 
-df = pd.read_csv('attractions.csv')
+df = pd.read_csv('Database/Project-Dataset/Attractions.csv')
+shortlist = []
+
+for i in range(len(df.index)):
+    if df.loc[i, 'attraction_category'] in cat:
+            shortlist.append(i)
+
+print(len(shortlist))
+
+tour = []
+
+for i in range(input_days):
