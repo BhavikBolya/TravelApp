@@ -1,4 +1,3 @@
-from unicodedata import category
 import pandas as pd
 import random
 
@@ -73,3 +72,4 @@ print(len(shortlist))
 tour = []
 
 for i in range(input_days):
+    continue

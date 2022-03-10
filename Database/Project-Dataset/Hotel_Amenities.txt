@@ -18,10 +18,8 @@
 17 Gym
 18 Kitchen
 19 Bar
-20 Restaurant temporarily unavailableRestaurant
-21 Pool temporarily unavailablePool
-22 All inclusive
-23 Parking available
-24 Outdoor Space
-25 Barbecue grill
-26 Fireplace
+20 All inclusive
+21 Parking available
+22 Outdoor Space
+23 Barbecue grill
+24 Fireplace
