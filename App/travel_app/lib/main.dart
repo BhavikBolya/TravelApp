@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:travel_app/firebase_options.dart';
 import 'package:travel_app/screens/home_screen.dart';
-import 'package:travel_app/screens/destination.dart';
+import 'package:travel_app/screens/destination_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
