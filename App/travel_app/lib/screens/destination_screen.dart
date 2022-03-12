@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
-
-
 class DestinationPage extends StatefulWidget {
   const DestinationPage({Key? key}) : super(key: key);
 
@@ -33,7 +31,7 @@ class _DestinationPageState extends State<DestinationPage> {
                     height: MediaQuery.of(context).size.width - 140,
                     width: MediaQuery.of(context).size.width - 25,
                     decoration: BoxDecoration(
-                        color: Colors.white30,
+                        color: Colors.grey.withOpacity(0.4),
                         borderRadius: BorderRadius.circular(25.0),
                         boxShadow: [
                           BoxShadow(
@@ -65,23 +63,31 @@ class _DestinationPageState extends State<DestinationPage> {
                   child: Stack(
                     children: <Widget>[
                       Container(
-                      height: 30,
-                      width: 50,
-                      decoration: BoxDecoration(
-                          color: Colors.white30,
-                          borderRadius: BorderRadius.circular(25.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.amber,
-                              offset: Offset(0.0, 2.0),
-                              blurRadius: 6.0,
-                            )
-                          ]),
-                    ),
-                    Positioned.fill(
-                       top: 75,
-                      left: 12.5,
-                      child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios))),
+                        height: 30,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(25.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0.0, 2.0),
+                                blurRadius: 6.0,
+                              )
+                            ]),
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.arrow_back_ios),
+                              iconSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ))
