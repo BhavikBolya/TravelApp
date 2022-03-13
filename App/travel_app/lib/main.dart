@@ -6,7 +6,7 @@ import 'package:travel_app/screens/home_screen.dart';
 import 'package:travel_app/screens/destination_screen.dart';
 import 'package:travel_app/screens/hotel_screen.dart';
 import 'package:travel_app/screens/itinerary_screen.dart';
-import 'package:travel_app/screens/itineraryhistory_screen.dart';
+import 'package:travel_app/screens/history.dart';
 import 'package:travel_app/screens/login_screen.dart';
 import 'package:travel_app/screens/preferences_screen.dart';
 import 'package:travel_app/screens/selector_screen.dart';
