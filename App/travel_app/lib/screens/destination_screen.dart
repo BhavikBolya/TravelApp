@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:travel_app/utils/routes.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
-class DestinationPage extends StatefulWidget {
-  const DestinationPage({Key? key}) : super(key: key);
+class DestinationScreen extends StatefulWidget {
+  const DestinationScreen({Key? key}) : super(key: key);
 
   @override
-  State<DestinationPage> createState() => _DestinationPageState();
+  State<DestinationScreen> createState() => _DestinationScreenState();
 }
 
-class _DestinationPageState extends State<DestinationPage> {
+class _DestinationScreenState extends State<DestinationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +83,10 @@ class _DestinationPageState extends State<DestinationPage> {
                           child: Align(
                             alignment: Alignment.center,
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, AppRoutes.homeRoute);
+                              },
                               icon: Icon(Icons.arrow_back_ios),
                               iconSize: 15,
                             ),
@@ -90,7 +95,18 @@ class _DestinationPageState extends State<DestinationPage> {
                       ),
                     ],
                   ),
-                ))
+                )),
+            Container(
+              height: MediaQuery.of(context).size.width,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.preferencesRoute);
+                    },
+                    child: Text("To preferences page")),
+              ),
+            )
           ],
         )
       ]),
