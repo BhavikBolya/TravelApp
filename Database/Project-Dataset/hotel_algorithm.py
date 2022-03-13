@@ -146,3 +146,6 @@ def hotelRec(input_city, input_budget, input_days, input_amenities):
         return_id.append(df.loc[hotel_id, 'hotel_id'])
     
     return return_id
+
+
+print(hotelRec(1,400,2,['1','6','7','14','2']))
