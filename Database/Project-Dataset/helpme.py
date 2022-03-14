@@ -10,21 +10,14 @@ def create_csv(fields, rows, dirname, filename):
     print(f"Saved csv with name {filename}")
 
 
-df1 = pd.read_csv("Database/Project-Dataset/restaurants.csv")
-print(len(df1.index))
-
-
-df2 = df1.drop_duplicates(subset ="rest_name", keep = 'first', inplace = False)
-print(len(df2.index))
-
-
+df1 = pd.read_csv("Database/Project-Dataset/rest.csv")
 
 rest_info = []
-for i in range(len(df2.index)):
-    df2['restaurant_name'][i] = i+1
-    rest_info1 = [i+1,df2['restaurant_name'][i],restaurant_url,restaurant_address, 'Jaisalmer', 'India', latitude, longitude, restaurant_location, restaurant_timing, restaurant_rating, restaurant_reviews, restaurant_about, cuisines, features, meals]
-    rest_info.append(rest_info1)
+for i in range(len(df1.index)):
+    ls = [i+1]+df1.loc[i].values.tolist()[1:]
+    rest_info.append(ls)
 
+print(len(rest_info))
 
-# fields = ['rest_id', 'rest_name', 'rest_url', 'rest_address', 'city', 'country', "latitude", "longitude", 'location_url', 'rest_timing', 'rest_rating', 'rest_review', 'rest_about',  "cuisines", "features", "meals"]
-# create_csv(fields, rest_info, "Project-Dataset/", "Jaisalmer_restaurant_info.csv")
+fields = ['rest_id', 'rest_name', 'rest_url', 'rest_address', 'city', "latitude", "longitude",  'rest_timing', 'rest_rating', "cuisines", "features"]
+create_csv(fields, rest_info, "Database/Project-Dataset/", "Rest1.csv")
