@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/routes.dart';
 
-int numTabs = 6;
+int numTabs = 10;
 
 class ItineraryScreen extends StatefulWidget {
   @override
@@ -14,9 +14,23 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          title: Center(
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.destinationRoute);
+              },
+              child: Text(
+                "Location",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
           toolbarHeight: 100,
           leading: Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0, 0),
+            padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0, 0),
             child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, AppRoutes.homeRoute);
@@ -29,7 +43,7 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
           ),
           actions: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 8.0, 8.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
               child: IconButton(
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.historyRoute);
@@ -76,37 +90,72 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                         backgroundColor: Colors.transparent,
                         body: Padding(
                           padding:
-                              const EdgeInsets.fromLTRB(25.0, 8.0, 25.0, 0.0),
-                          child: Container(
-                            height: MediaQuery.of(context).size.width / 10,
-                            width: MediaQuery.of(context).size.width,
-                            color: Colors.transparent,
-                            child: TabBar(
-                              isScrollable: true,
-                              indicator: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: Colors.amber,
+                              const EdgeInsets.fromLTRB(25.0, 0.0, 25.0, 0.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.width / 10,
+                                width: MediaQuery.of(context).size.width,
+                                color: Colors.transparent,
+                                child: TabBar(
+                                  isScrollable: true,
+                                  indicator: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    color: Colors.amber,
+                                  ),
+                                  tabs: tabMaker(),
+                                ),
                               ),
-                              tabs: tabMaker(),
-                            ),
+                              Expanded(
+                                child: TabBarView(children: tabContent()),
+                                /* child: TabBarView(
+                                children: [
+                                  Text(
+                                    "tab 1",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  Text("tab 2",
+                                      style: TextStyle(color: Colors.white))
+                                ],
+                              ) */
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                    8.0, 8.0, 8.0, 8.0),
+                                child: Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Container(
+                                    height:
+                                        MediaQuery.of(context).size.width / 10,
+                                    width:
+                                        MediaQuery.of(context).size.width / 6,
+                                    color: Colors.transparent,
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, AppRoutes.homeRoute);
+                                        },
+                                        child: Text(
+                                          "Save",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                /* Container(
-                  height: MediaQuery.of(context).size.width,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, AppRoutes.homeRoute);
-                      },
-                      child: Text("save"),
-                    ),
-                  ),
-                ) */
               ],
             ),
           ],
@@ -132,4 +181,20 @@ tabMaker() {
   }
   ;
   return tabs;
+}
+
+tabContent() {
+  List<Widget> content = [];
+  for (var i = 1; i <= numTabs; i++) {
+    content.add(
+      Align(
+        alignment: Alignment.center,
+        child: Text(
+          "Tab $i",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+  return content;
 }
