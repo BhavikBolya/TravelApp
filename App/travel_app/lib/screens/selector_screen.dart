@@ -61,23 +61,7 @@ class _HotelSelectorState extends State<HotelSelector> {
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Column(
-          children: hotels(),
-          // Positioned.fill(
-          //   top: 170,
-          //   child: Align(
-          //     alignment: Alignment.topCenter,
-          //     child: Padding(
-          //       padding: const EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0.0),
-          //       child: Container(
-          //         height: MediaQuery.of(context).size.width / 2.5,
-          //         decoration: BoxDecoration(
-          //           borderRadius: BorderRadius.circular(25),
-          //           color: Colors.white30,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // )
+          children: hotels(context),
           /* Container(
                     height: MediaQuery.of(context).size.width,
                     child: Align(
@@ -96,19 +80,22 @@ class _HotelSelectorState extends State<HotelSelector> {
   }
 }
 
-hotels() {
+hotels(context) {
   List<Widget> hotelList = [SizedBox(height: 170)];
   for (var i = 0; i < numHotels; i++) {
     hotelList.add(Align(
       alignment: Alignment.topCenter,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(12.0, 30.0, 12.0, 30.0),
+        padding: const EdgeInsets.fromLTRB(12.0, 20.0, 12.0, 15.0),
         child: InkWell(
           onTap: () {
-            AlertDialog(
-              content: Text(
-                "hotel $i",
-                style: TextStyle(color: Colors.white),
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                content: Text(
+                  "hotel $i",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             );
           },
