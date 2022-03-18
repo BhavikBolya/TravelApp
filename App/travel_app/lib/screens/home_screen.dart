@@ -8,7 +8,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-/*class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +42,9 @@ class HomeScreen extends StatefulWidget {
       ],
     ));
   }
-}*/
+}
 
-class _HomeScreenState extends State<HomeScreen> {
+/* class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,4 +68,4 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ));
   }
-}
+} */
