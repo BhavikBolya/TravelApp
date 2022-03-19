@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/algorithm/hotel_algo.dart';
 import 'package:travel_app/utils/routes.dart';
 
 class PreferencesScreen extends StatefulWidget {
@@ -178,6 +179,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               ],
             ),
           ),
+          ElevatedButton(
+              onPressed: () async {
+                print(await hotel_algo("Jaipur", 500, 3, userHotelPreferences));
+              },
+              child: Icon(Icons.next_plan))
         ],
       )),
     );

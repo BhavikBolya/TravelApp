@@ -2,8 +2,9 @@ import 'package:df/df.dart';
 import 'package:sortedmap/sortedmap.dart';
 import 'package:deep_collection/deep_collection.dart';
 
-Future<List> hotel_algo(String inputCity,  int inputBudget, int inputDays, List inputAmenities) async {
-  final df = await DataFrame.fromCsv('hotels.csv', verbose: true);
+Future<List> hotel_algo(String inputCity, int inputBudget, int inputDays,
+    List inputAmenities) async {
+  final df = await DataFrame.fromCsv('assets/hotels.csv', verbose: true);
   // String input_city = "Jaipur";
   // int input_budget = 500;
   // int input_days = 7;
@@ -122,13 +123,9 @@ Future<List> hotel_algo(String inputCity,  int inputBudget, int inputDays, List 
   }
   return returnId;
 }
+
 // Future<void> main() async {
-//   List out = await hotel_algo('Jaipur', 500, 7, [
-//     'Spa',
-//     'Pool',
-//     'Restaurant',
-//     'Bar',
-//     'Parking included'
-//   ]);
+//   List out = await hotel_algo('Jaipur', 500, 7,
+//       ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']);
 //   print(out);
 // }
