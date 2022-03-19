@@ -4,7 +4,7 @@ import 'package:deep_collection/deep_collection.dart';
 
 Future<List> hotel_algo(String inputCity, int inputBudget, int inputDays,
     List inputAmenities) async {
-  final df = await DataFrame.fromCsv('assets/hotels.csv', verbose: true);
+  final df = await DataFrame.fromCsv('hotels.csv', verbose: true);
   // String input_city = "Jaipur";
   // int input_budget = 500;
   // int input_days = 7;
@@ -125,7 +125,7 @@ Future<List> hotel_algo(String inputCity, int inputBudget, int inputDays,
 }
 
 Future<void> main() async {
-  List out = await hotel_algo('Jaipur', 500, 7,
+  List out = await hotel_algo('Jaipur', 700, 5,
       ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']);
   print(out);
 }

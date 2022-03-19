@@ -81,7 +81,9 @@ class _HotelSelectorState extends State<HotelSelector> {
 }
 
 hotels(context) {
-  List<Widget> hotelList = [SizedBox(height: 170)];
+  List<Widget> hotelList = [
+    SizedBox(height: 170),
+  ];
   for (var i = 0; i < numHotels; i++) {
     hotelList.add(Align(
       alignment: Alignment.topCenter,
@@ -110,5 +112,19 @@ hotels(context) {
       ),
     ));
   }
+  hotelList.add(
+    Container(
+      height: MediaQuery.of(context).size.width,
+      child: Align(
+        alignment: Alignment.center,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, AppRoutes.itineraryRoute);
+          },
+          child: Text("Select"),
+        ),
+      ),
+    ),
+  );
   return hotelList;
 }

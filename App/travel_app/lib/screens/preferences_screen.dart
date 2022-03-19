@@ -180,8 +180,8 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             ),
           ),
           ElevatedButton(
-              onPressed: () async {
-                print(await hotel_algo("Jaipur", 500, 3, userHotelPreferences));
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },
               child: Icon(Icons.next_plan))
         ],
@@ -283,12 +283,29 @@ List<Preferences> hotelPref = [
 
 List<Preferences> cuisinePref = [
   Preferences("Italian ", Icons.local_pizza),
-  Preferences("Fastfood", Icons.fastfood),
+  Preferences("North Indian", Icons.food_bank),
+  Preferences("South Indian", Icons.food_bank),
   Preferences("Chineese", Icons.food_bank),
+  Preferences("Street Food", Icons.streetview),
+  Preferences("Mexican", Icons.food_bank),
+  Preferences("Finger Food", Icons.fastfood),
+  
 ];
 
 List<Preferences> attractionsPref = [
-  Preferences("Tours", Icons.tour),
-  Preferences("Adventure", Icons.sports),
-  Preferences("History", Icons.attractions),
+  Preferences("Tours and Day Trips", Icons.tour),
+  Preferences("Adventure and Outdoor", Icons.sports),
+  Preferences("History and Culture", Icons.history_edu),
+  Preferences("Water Activities", Icons.beach_access),
+  Preferences("Shows and Concerts", Icons.theater_comedy),
+  Preferences("Attractions", Icons.attractions),
+  Preferences("Food, Drink and Nightlife", Icons.nightlife),
+  Preferences("Classes and Workshops", Icons.workspaces),
+  Preferences("Transportation", Icons.emoji_transportation),
+  Preferences("Air, Helicopter and Balloon Tours", Icons.airplane_ticket),
+  Preferences("Holiday and Seasonal Tours", Icons.holiday_village),
+  Preferences("Weddings and Honeymoons", Icons.event),
+  Preferences("Shopping and fashion", Icons.shopping_bag),
+  Preferences("Wildlife and nature", Icons.nature),
+  Preferences("Cruises and Boat Tours", Icons.water)
 ];

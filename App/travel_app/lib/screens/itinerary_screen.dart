@@ -71,11 +71,12 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                       height: MediaQuery.of(context).size.width - 210,
                       width: MediaQuery.of(context).size.width - 40,
                       decoration: BoxDecoration(
+                        color: Colors.white30,
                         //border: Border.all(width: 4.0, color: Colors.white),
                         borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(
-                            image: AssetImage("assets/udaipur.jpg"),
-                            fit: BoxFit.cover),
+                        // image: DecorationImage(
+                        //     image: AssetImage("assets/udaipur.jpg"),
+                        //     fit: BoxFit.cover),
                       ),
                     ),
                   ),
@@ -128,7 +129,7 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                                     height:
                                         MediaQuery.of(context).size.width / 10,
                                     width:
-                                        MediaQuery.of(context).size.width / 6,
+                                        MediaQuery.of(context).size.width / 5,
                                     color: Colors.transparent,
                                     child: Align(
                                       alignment: Alignment.center,
