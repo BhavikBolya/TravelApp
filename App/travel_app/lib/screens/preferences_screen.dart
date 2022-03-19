@@ -262,11 +262,23 @@ class Preferences {
 }
 
 List<Preferences> hotelPref = [
+  Preferences("Laundary", Icons.local_laundry_service),
   Preferences("Spa", Icons.spa),
   Preferences("Pool", Icons.pool),
   Preferences("Parking", Icons.local_parking),
-  Preferences("Wifi", Icons.wifi),
-  Preferences("Breakfast", Icons.breakfast_dining),
+  Preferences("Free Wifi", Icons.wifi),
+  Preferences("Pet Friendly", Icons.pets),
+  Preferences("Hot Tub", Icons.hot_tub),
+  Preferences("Breakfast Included", Icons.breakfast_dining),
+  Preferences("Gym", Icons.sports_gymnastics),
+  Preferences("Restaurant", Icons.restaurant),
+  Preferences("Airport Shuttle", Icons.airport_shuttle),
+  Preferences("Babysitting", Icons.baby_changing_station),
+  Preferences("Kitchen", Icons.kitchen),
+  Preferences("Bar", Icons.wine_bar),
+  Preferences("Outdoor Space", Icons.park),
+  Preferences("Barbecue", Icons.outdoor_grill),
+  Preferences("Fireplace", Icons.fireplace),
 ];
 
 List<Preferences> cuisinePref = [

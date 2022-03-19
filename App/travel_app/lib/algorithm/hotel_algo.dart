@@ -124,8 +124,8 @@ Future<List> hotel_algo(String inputCity, int inputBudget, int inputDays,
   return returnId;
 }
 
-// Future<void> main() async {
-//   List out = await hotel_algo('Jaipur', 500, 7,
-//       ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']);
-//   print(out);
-// }
+Future<void> main() async {
+  List out = await hotel_algo('Jaipur', 500, 7,
+      ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']);
+  print(out);
+}
