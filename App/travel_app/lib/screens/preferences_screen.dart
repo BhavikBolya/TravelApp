@@ -74,7 +74,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 fontWeight: FontWeight.bold),
           ),
           Container(
-            height: 130,
+            height: MediaQuery.of(context).size.height / 5,
             color: Colors.transparent,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -111,7 +111,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 fontWeight: FontWeight.bold),
           ),
           Container(
-            height: 130,
+            height: MediaQuery.of(context).size.height / 5,
             color: Colors.transparent,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -149,7 +149,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 fontWeight: FontWeight.bold),
           ),
           Container(
-            height: 130,
+            height: MediaQuery.of(context).size.height / 5,
             color: Colors.transparent,
             child: ListView(
               scrollDirection: Axis.horizontal,
@@ -179,12 +179,18 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               ],
             ),
           ),
-          ElevatedButton(
-              onPressed: () {
+          InkWell(
+              onTap: () {
                 //print(hotel_algo("Jaipur", 700, 5, userHotelPreferences));
                 Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },
-              child: Icon(Icons.next_plan))
+              child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(50)),
+                  child: Icon(Icons.navigate_next)))
         ],
       )),
     );
