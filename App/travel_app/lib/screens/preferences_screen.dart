@@ -181,6 +181,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           ),
           ElevatedButton(
               onPressed: () {
+                //print(hotel_algo("Jaipur", 700, 5, userHotelPreferences));
                 Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },
               child: Icon(Icons.next_plan))
@@ -289,7 +290,6 @@ List<Preferences> cuisinePref = [
   Preferences("Street Food", Icons.streetview),
   Preferences("Mexican", Icons.food_bank),
   Preferences("Finger Food", Icons.fastfood),
-  
 ];
 
 List<Preferences> attractionsPref = [
