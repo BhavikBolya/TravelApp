@@ -84,7 +84,7 @@ hotels(context) {
   List<Widget> hotelList = [
     SizedBox(height: 170),
   ];
-  for (var i = 0; i < numHotels; i++) {
+  for (var i = 1; i <= numHotels; i++) {
     hotelList.add(Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -92,10 +92,26 @@ hotels(context) {
         child: InkWell(
           onTap: () {
             showDialog(
+              barrierDismissible: true,
+              //barrierColor: Colors.black87,
               context: context,
               builder: (BuildContext context) => AlertDialog(
-                content: Text(
-                  "hotel $i",
+                actions: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.itineraryRoute);
+                      },
+                      child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(50)),
+                          child: Icon(Icons.navigate_next)))
+                ],
+                backgroundColor: Colors.black,
+                title: Text(
+                  "Hotel $i",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -103,6 +119,24 @@ hotels(context) {
           },
           child: Container(
             height: 165,
+            width: MediaQuery.of(context).size.width - 40,
+            child: Column(
+              children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
+                      child: Text(
+                        "Hotel $i",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )),
+              ],
+            ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               color: Colors.white30,
@@ -112,19 +146,5 @@ hotels(context) {
       ),
     ));
   }
-  hotelList.add(
-    Container(
-      height: MediaQuery.of(context).size.width,
-      child: Align(
-        alignment: Alignment.center,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.itineraryRoute);
-          },
-          child: Text("Select"),
-        ),
-      ),
-    ),
-  );
   return hotelList;
 }
