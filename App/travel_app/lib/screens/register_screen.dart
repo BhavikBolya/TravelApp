@@ -105,7 +105,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             labelStyle: TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.w600),
+                                            errorStyle:
+                                                TextStyle(color: Colors.red),
+                                            errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 2),
+                                                    borderRadius: BorderRadius
+                                                        .circular(10)),
                                           ),
+                                          validator: (value) {
+                                            if (name.isEmpty) {
+                                              return "Name cannot be empty";
+                                            } else {
+                                              return null;
+                                            }
+                                          },
                                           onChanged: (value) {
                                             name = value;
                                             setState(() {});
