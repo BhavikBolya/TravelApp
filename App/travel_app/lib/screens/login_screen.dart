@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +15,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   String email = "";
   String password = "";
+  bool changeButton = false;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,120 +34,263 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(decoration: BoxDecoration(color: Colors.black38)),
             ),
             Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 550,
+              child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage("assets/images/Safar-logo-white.png"),
+                  scale: 2,
+                )),
+              ),
+            ),
+            Positioned(
                 top: 0,
                 right: 0,
                 left: 0,
                 bottom: 120,
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height / 1.75,
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(196, 196, 196, 0.45),
-                        borderRadius: BorderRadius.circular(15),
-                        /* boxShadow: [
-                      BoxShadow(color: Colors.black),
-                    ], */
-                      ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.zero,
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 12.5, sigmaY: 12.5),
                       child: Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(25.0, 20.0, 25.0, 0.0),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Form(
-                              child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    focusColor: Colors.white,
-                                    alignLabelWithHint: true,
-                                    labelText: "email",
-                                    hintText: "Enter Email",),
-                                onChanged: (value) {
-                                  email = value;
-                                  setState(() {});
-                                  //print(email);
-                                },
-                              ),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                    alignLabelWithHint: true,
-                                    labelText: "password",
-                                    hintText: "Enter Password"),
-                                onChanged: (value) {
-                                  password = value;
-                                  setState(() {});
-                                  //print(password);
-                                },
-                              ),
-                              /* Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
-                              child: Align(
-                                alignment: Alignment.topCenter,
-                                child: Divider(
-                                  thickness: 2,
-                                  indent: 70,
-                                  endIndent: 70,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ), */
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                child: Text(
-                                  "Sign - in",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                child: Align(
-                                  alignment: Alignment.topCenter,
-                                  child: Container(
-                                    height: 40,
-                                    width: 256,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: InkWell(
-                                        child: Row(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.fromLTRB(
-                                                      30, 0, 30, 0),
-                                              child: Row(
-                                                children: [
-                                                  Icon(Icons.g_mobiledata),
-                                                  Text(
-                                                      "Continue in with Google",
-                                                      style: TextStyle(
-                                                          fontFamily:
-                                                              GoogleFonts
-                                                                      .roboto()
-                                                                  .fontFamily,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: Color.fromRGBO(
-                                                              0, 0, 0, 0.54))),
-                                                ],
-                                              ),
-                                            )
-                                          ],
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 1.75,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(196, 196, 196, 0.45),
+                            borderRadius: BorderRadius.circular(15),
+                            /* boxShadow: [
+                              BoxShadow(color: Colors.black.withOpacity(0.5)),
+                            ], */
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                25.0, 20.0, 25.0, 0.0),
+                            child: Form(
+                                key: _formKey,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 40, 0, 0),
+                                      child: Container(
+                                        height: 40,
+                                        child: TextFormField(
+                                          keyboardType:
+                                              TextInputType.emailAddress,
+                                          style: TextStyle(color: Colors.white),
+                                          decoration: InputDecoration(
+                                            isDense: true,
+                                            focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            focusColor: Colors.white,
+                                            labelText: "email",
+                                            labelStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                            errorStyle:
+                                                TextStyle(color: Colors.red),
+                                            errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 2),
+                                                    borderRadius: BorderRadius
+                                                        .circular(10)),
+                                          ),
+                                          validator: (value) {
+                                            String pattern =
+                                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                                            RegExp regExp = new RegExp(pattern);
+
+                                            if (!regExp.hasMatch(email)) {
+                                              return "Please check your email address";
+                                            } else {
+                                              return null;
+                                            }
+                                          },
+                                          onChanged: (value) {
+                                            email = value;
+                                            setState(() {});
+                                            //print(email);
+                                          },
                                         ),
-                                        onTap: () {
-                                          //GoogleSignIn().signIn();
-                                        }),
-                                  ),
-                                ),
-                              )
-                            ],
-                          )),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 30, 0, 0),
+                                      child: Container(
+                                        height: 40,
+                                        child: TextFormField(
+                                          style: TextStyle(color: Colors.white),
+                                          keyboardType:
+                                              TextInputType.visiblePassword,
+                                          decoration: InputDecoration(
+                                            isDense: true,
+                                            labelText: "password",
+                                            labelStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                            focusColor: Colors.white,
+                                            focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            errorStyle:
+                                                TextStyle(color: Colors.red),
+                                            errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 2),
+                                                    borderRadius: BorderRadius
+                                                        .circular(10)),
+                                          ),
+                                          obscureText: true,
+                                          validator: (value) {
+                                            String pattern =
+                                                r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+                                            RegExp regExp = new RegExp(pattern);
+
+                                            if (!regExp.hasMatch(password)) {
+                                              return "Password must have minimum 8 length, Minimum 1 Upper case Minimum 1 lowercase Minimum 1 Numeric NumberMinimum 1 Special Character";
+                                            } else {
+                                              return null;
+                                            }
+                                          },
+                                          onChanged: (value) {
+                                            password = value;
+                                            setState(() {});
+                                            //print(password);
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Text(
+                                          "Forgot Password?",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w300),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 15),
+                                      child: Divider(
+                                        thickness: 2,
+                                        indent: 70,
+                                        endIndent: 70,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 15, 0, 0),
+                                      child: Text(
+                                        "Sign - in",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 20, 0, 0),
+                                      child: Container(
+                                        height: 40,
+                                        width: 256,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        child: InkWell(
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          30, 0, 30, 0),
+                                                  child: Row(
+                                                    children: [
+                                                      Image.asset(
+                                                        "assets/images/google-logo.png",
+                                                        scale: 2,
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .fromLTRB(
+                                                                10, 0, 0, 0),
+                                                        child: Text(
+                                                            "Continue in with Google",
+                                                            style: TextStyle(
+                                                                fontFamily: GoogleFonts
+                                                                        .roboto()
+                                                                    .fontFamily,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0.54))),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            onTap: () {
+                                              //GoogleSignIn().signIn();
+                                            }),
+                                      ),
+                                    )
+                                  ],
+                                )),
+                          ),
                         ),
                       ),
                     ),
@@ -159,7 +305,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.bottomRight,
                 child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.homeRoute);
+                      if (_formKey.currentState!.validate()) {
+                        setState(() {
+                          changeButton = true;
+                        });
+                        Navigator.pushNamed(context, AppRoutes.homeRoute);
+                      }
                     },
                     child: Container(
                         height: 50,

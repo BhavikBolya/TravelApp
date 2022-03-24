@@ -34,6 +34,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           ),
         ),
         toolbarHeight: 100,
+        leadingWidth: 70,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0, 0),
           child: IconButton(
@@ -41,8 +42,10 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               Navigator.pushNamed(context, AppRoutes.homeRoute);
             },
             //icon: Icon(Icons.home_filled),
-            icon: Image.asset("assets/LOGO.png"),
-            iconSize: 35,
+            icon: Image.asset(
+              "assets/images/Safar-logo-white.png",
+            ),
+
             color: Colors.white,
           ),
         ),
