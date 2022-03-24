@@ -3,9 +3,9 @@ import 'package:df/df.dart';
 
 
 // ignore: non_constant_identifier_names
-Future<List> attraction_algo(String inputCity, int inputDays, List inputCategory) async {
+Future<List> attraction_algo(DataFrame df, String inputCity, int inputDays, List inputCategory) async {
   
-  final df = await DataFrame.fromCsv('attractions.csv', verbose: true);
+  //final df = await DataFrame.fromCsv('attractions.csv', verbose: true);
 
   // String inputCity = "Jodhpur";
   // int inputDays = 10;

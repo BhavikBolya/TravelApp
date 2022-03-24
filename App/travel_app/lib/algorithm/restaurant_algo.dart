@@ -3,9 +3,9 @@ import 'package:sortedmap/sortedmap.dart';
 import 'package:deep_collection/deep_collection.dart';
 
 // ignore: non_constant_identifier_names
-Future<List> restaurant_algo(String inputCity, int inputDays, List inputCuisines) async {
+Future<List> restaurant_algo(DataFrame df, String inputCity, int inputDays, List inputCuisines) async {
 
-  final df = await DataFrame.fromCsv('restaurants.csv', verbose: true);
+  //final df = await DataFrame.fromCsv('restaurants.csv', verbose: true);
 
   List shortlist = [];
   for (int i = 0; i < df.length; i++) {
@@ -108,11 +108,11 @@ Future<List> restaurant_algo(String inputCity, int inputDays, List inputCuisines
         .toString()));
   }
   return returnId;
-  return [];
+  //return [];
 }
-Future<void> main() async {
+/* Future<void> main() async {
   List out = await restaurant_algo('Jaipur', 7, [
     "North Indian", "Chinese", "Mughlai", "Fast Food", "Biryani"
   ]);
   print(out);
-}
+} */
