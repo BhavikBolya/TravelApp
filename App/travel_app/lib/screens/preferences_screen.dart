@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:ml_dataframe/ml_dataframe.dart';
 import 'package:travel_app/algorithm/hotel_algo.dart';
 import 'package:travel_app/utils/routes.dart';
-
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({Key? key}) : super(key: key);
 
@@ -13,7 +16,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   List userHotelPreferences = [];
   List userCuisinePreferences = [];
   List userAttractionPreferences = [];
-
+  Future<void> test() async{
+    
+    //final rawCsvContent = await rootBundle.loadString('assets/database/hotels.csv');
+      final df = DataFrame.fromRawCsv('assets/database/hotels.csv');
+      hotel_algo('Jaipur', 700, 5,
+       ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,8 +192,9 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             ),
           ),
           InkWell(
-              onTap: () {
-                //print(hotel_algo("Jaipur", 700, 5, userHotelPreferences));
+              onTap: () async {
+                // print(await hotel_algo("Jaipur", 700, 5, userHotelPreferences));
+                test();
                 Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },
               child: Container(
