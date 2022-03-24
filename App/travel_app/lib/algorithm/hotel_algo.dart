@@ -1,16 +1,19 @@
+
 import 'package:df/df.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sortedmap/sortedmap.dart';
 import 'package:deep_collection/deep_collection.dart';
 import 'package:csv/csv.dart';
 //import 'package:ml_dataframe/ml_dataframe.dart';
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' show ByteData, rootBundle;
 
 Future<List> hotel_algo(String inputCity, int inputBudget, int inputDays,
     List inputAmenities) async {
-    final yourString = await rootBundle.loadString('assets/database/hotels.csv');
-   List<List<dynamic>> dflist = const CsvToListConverter().convert(yourString);
-  final df = await DataFrame.fromCsv('assets/database/hotels.csv', verbose: true);
+      
+  /* final yourString = await rootBundle.loadString('assets/database/hotels.csv');
+   List<List<dynamic>> dflist = const CsvToListConverter().convert(yourString); */
+  final df = await DataFrame.fromCsv('hotels.csv', verbose: true);
   // String input_city = "Jaipur";
   // int input_budget = 500;
   // int input_days = 7;
@@ -128,13 +131,14 @@ Future<List> hotel_algo(String inputCity, int inputBudget, int inputDays,
   //       .toString()));
   // }
   print(df);
-  print(dflist);
+  //print(dflist);
   var returnId = [];
   return returnId;
 }
 
-Future<void> main() async {
+/* Future<void> main() async {
   List out = await hotel_algo('Jaipur', 700, 5,
       ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']);
   print(out);
 }
+ */

@@ -50,6 +50,7 @@ dependencies:
   ml_dataframe: ^0.5.1
   packhorse: ^0.6.1
   path_provider: ^2.0.9
+  csv: ^5.0.1
   
   
 

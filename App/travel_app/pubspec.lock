@@ -72,7 +72,7 @@ packages:
     source: hosted
     version: "3.0.1"
   csv:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: csv
       url: "https://pub.dartlang.org"
@@ -204,7 +204,7 @@ packages:
       name: font_awesome_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "10.0.0"
+    version: "9.2.0"
   function_tree:
     dependency: transitive
     description:
@@ -538,7 +538,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.4"
+    version: "2.4.2"
   xdg_directories:
     dependency: transitive
     description:
