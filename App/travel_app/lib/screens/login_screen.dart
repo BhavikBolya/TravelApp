@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/authentication.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/widgets/google_sign_in_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -244,48 +246,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                             color: Colors.white,
                                             borderRadius:
                                                 BorderRadius.circular(10)),
-                                        child: InkWell(
-                                            child: Row(
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
-                                                          30, 0, 30, 0),
-                                                  child: Row(
-                                                    children: [
-                                                      Image.asset(
-                                                        "assets/images/google-logo.png",
-                                                        scale: 2,
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                    .fromLTRB(
-                                                                10, 0, 0, 0),
-                                                        child: Text(
-                                                            "Continue in with Google",
-                                                            style: TextStyle(
-                                                                fontFamily: GoogleFonts
-                                                                        .roboto()
-                                                                    .fontFamily,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400,
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0.54))),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                            onTap: () {
-                                              //GoogleSignIn().signIn();
-                                            }),
+                                        child: FutureBuilder(
+                                          future: Authentication.initializeFirebase(context: context),
+                                          builder: (context, snapshot) {
+                                            if (snapshot.hasError){
+                                              return Text('Error initializing Firebase');
+                                            } else if(snapshot.connectionState == ConnectionState.done){
+                                              return GoogleSignInButton();
+                                            }
+                                            return CircularProgressIndicator(
+                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                Colors.redAccent,
+                                              ),
+                                            );
+                                          },
+                                          
+                                        ),
                                       ),
                                     ),
                                     Padding(

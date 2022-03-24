@@ -13,11 +13,8 @@ import 'package:travel_app/screens/register_screen.dart';
 import 'package:travel_app/screens/selector_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+void main(){
+
   runApp(const MyApp());
 }
 

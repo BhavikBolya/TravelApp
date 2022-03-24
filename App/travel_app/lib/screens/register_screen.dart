@@ -1,9 +1,13 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/utils/validator.dart';
+
+import '../utils/fire_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -18,6 +22,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String name = "";
   bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
+
+ final _nameTextController = TextEditingController();
+  final _emailTextController = TextEditingController();
+  final _passwordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +150,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          controller: _emailTextController,
                                           autocorrect: false,
                                           keyboardType:
                                               TextInputType.emailAddress,
@@ -182,15 +191,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                         .circular(10)),
                                           ),
                                           validator: (value) {
-                                            String pattern =
-                                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                                            RegExp regExp = new RegExp(pattern);
-
-                                            if (!regExp.hasMatch(email)) {
-                                              return "Please check your email address";
-                                            } else {
-                                              return null;
-                                            }
+                                            Validator.validateEmail(email: value.toString());
                                           },
                                           onChanged: (value) {
                                             email = value;
@@ -206,6 +207,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          controller: _passwordTextController,
                                           autocorrect: false,
                                           style: TextStyle(color: Colors.white),
                                           keyboardType:
@@ -247,15 +249,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           ),
                                           obscureText: true,
                                           validator: (value) {
-                                            String pattern =
-                                                r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-                                            RegExp regExp = new RegExp(pattern);
-
-                                            if (!regExp.hasMatch(password)) {
-                                              return "Password must have minimum 8 length, Minimum 1 Upper case Minimum 1 lowercase Minimum 1 Numeric NumberMinimum 1 Special Character";
-                                            } else {
-                                              return null;
-                                            }
+                                            Validator.validatePassword(password: value.toString());
                                           },
                                           onChanged: (value) {
                                             password = value;
@@ -371,12 +365,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: InkWell(
-                    onTap: () {
+                    onTap: () async {
                       if (_formKey.currentState!.validate()) {
                         setState(() {
                           changeButton = true;
                         });
+                        User? user = await FireAuth.registerUsingEmailPassword(
+                          name: _nameTextController.text,
+                          email: _emailTextController.text,
+                          password: _passwordTextController.text,
+                        );
+                      if (user != null) {
                         Navigator.pushNamed(context, AppRoutes.homeRoute);
+                      }
+                        
                       }
                     },
                     child: Container(
