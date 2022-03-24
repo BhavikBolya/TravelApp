@@ -326,6 +326,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           changeButton = true;
                         });
                         Navigator.pushNamed(context, AppRoutes.homeRoute);
+                        
                       }
                     },
                     child: Container(
