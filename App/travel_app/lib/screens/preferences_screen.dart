@@ -1,13 +1,10 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get_connect/http/src/http/io/file_decoder_io.dart';
-//import 'package:ml_dataframe/ml_dataframe.dart';
-import 'package:path_provider/path_provider.dart';
+
 import 'package:travel_app/algorithm/hotel_algo.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:df/df.dart';
+import 'dart:convert';
 
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({Key? key}) : super(key: key);
@@ -20,21 +17,6 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   List userHotelPreferences = [];
   List userCuisinePreferences = [];
   List userAttractionPreferences = [];
-  Future<void> test() async {
-    //final rawCsvContent = await rootBundle.loadString('assets/database/hotels.csv');
-    String path = 'assets/database/hotels.csv';
-    //File file = File(path);
-    ByteData data = await rootBundle.load(path);
-    String directory = (await getTemporaryDirectory()).path;
-
-    //File file =  File(path).writeAsBytes(data, '$directory/uszips.csv');
-    File file = Future<File> writeAsBytes(data, FileMode mode = FileMode.append, bool flush = false);
-    final df = DataFrame.fromCsv(directory);
-    print(df);
-    /* hotel_algo('Jaipur', 700, 5,
-       ['Spa', 'Pool', 'Restaurant', 'Bar', 'Parking included']); */
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,8 +187,19 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           ),
           InkWell(
               onTap: () async {
-                // print(await hotel_algo("Jaipur", 700, 5, userHotelPreferences));
-                test();
+                var data =
+                    await rootBundle.loadString('assets/database/hotels.json');
+
+                var decodedData = List<Map<String, dynamic>>.from(
+                    json.decode(data)['hotels']);
+
+                DataFrame df = await DataFrame.fromRows(decodedData);
+
+                var hotelList = await hotel_algo(
+                    df, "Jaipur", 700, 5, userHotelPreferences);
+
+                print(df.subset(37, 38));
+
                 Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },
               child: Container(

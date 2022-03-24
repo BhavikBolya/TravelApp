@@ -205,13 +205,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "9.2.0"
-  function_tree:
-    dependency: transitive
-    description:
-      name: function_tree
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.0"
   get:
     dependency: "direct main"
     description:
@@ -345,20 +338,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  normal:
-    dependency: transitive
-    description:
-      name: normal
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.5.1"
-  packhorse:
-    dependency: "direct main"
-    description:
-      name: packhorse
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.1"
   path:
     dependency: transitive
     description:
