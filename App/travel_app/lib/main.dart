@@ -9,6 +9,7 @@ import 'package:travel_app/screens/itinerary_screen.dart';
 import 'package:travel_app/screens/history.dart';
 import 'package:travel_app/screens/login_screen.dart';
 import 'package:travel_app/screens/preferences_screen.dart';
+import 'package:travel_app/screens/register_screen.dart';
 import 'package:travel_app/screens/selector_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.hotelRoute: (context) => HotelScreen(),
         AppRoutes.itineraryRoute: (context) => ItineraryScreen(),
         AppRoutes.historyRoute: (context) => HistoryScreen(),
+        AppRoutes.registerRoute: (context) => RegisterScreen(),
       },
     );
   }

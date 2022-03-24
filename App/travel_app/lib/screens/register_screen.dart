@@ -5,16 +5,17 @@ import 'package:travel_app/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   String email = "";
   String password = "";
+  String name = "";
   bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -81,6 +82,45 @@ class _LoginScreenState extends State<LoginScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          autocorrect: false,
+                                          keyboardType:
+                                              TextInputType.emailAddress,
+                                          style: TextStyle(color: Colors.white),
+                                          decoration: InputDecoration(
+                                            isDense: true,
+                                            focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 2),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            focusColor: Colors.white,
+                                            labelText: "name",
+                                            labelStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          onChanged: (value) {
+                                            name = value;
+                                            setState(() {});
+                                            //print(email);
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 30, 0, 0),
+                                      child: Container(
+                                        height: 40,
+                                        child: TextFormField(
+                                          autocorrect: false,
                                           keyboardType:
                                               TextInputType.emailAddress,
                                           style: TextStyle(color: Colors.white),
@@ -144,6 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          autocorrect: false,
                                           style: TextStyle(color: Colors.white),
                                           keyboardType:
                                               TextInputType.visiblePassword,
@@ -203,18 +244,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 10),
-                                      child: Align(
-                                        alignment: Alignment.centerRight,
-                                        child: Text(
-                                          "Forgot Password?",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w300),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
                                       padding: const EdgeInsets.only(top: 15),
                                       child: Divider(
                                         thickness: 2,
@@ -227,7 +256,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 15, 0, 0),
                                       child: Text(
-                                        "Sign - in",
+                                        "Register with",
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.w600,
@@ -293,10 +322,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       child: InkWell(
                                         onTap: () {
                                           Navigator.pushNamed(
-                                              context, AppRoutes.registerRoute);
+                                              context, AppRoutes.loginRoute);
                                         },
                                         child: Text(
-                                          "New User? Sign up",
+                                          "Already have an account? Sign in",
                                           style: TextStyle(
                                               color: Colors.white,
                                               decoration:
@@ -364,7 +393,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ]),
                     child: Center(
                         child: Text(
-                      "Welcome",
+                      "Register",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

@@ -9,4 +9,5 @@ class AppRoutes {
   static String hotelRoute = "/hotel";
   static String itineraryRoute = "/itinerary";
   static String historyRoute = "/itineraryhistory";
+  static String registerRoute = "/register";
 }
