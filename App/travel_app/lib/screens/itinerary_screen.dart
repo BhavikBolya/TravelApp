@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/preferences_screen.dart';
+import 'package:travel_app/screens/selector_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
-int numTabs = 10;
+int numTabs = 5;
 
 class ItineraryScreen extends StatefulWidget {
   @override
@@ -11,6 +13,11 @@ class ItineraryScreen extends StatefulWidget {
 class _ItineraryScreenState extends State<ItineraryScreen> {
   @override
   Widget build(BuildContext context) {
+    var hotel_info = [
+      df1.colRecords('hotel_name', offset: finalHotel - 1, limit: finalHotel),
+      df1.colRecords('hotel_rating', offset: finalHotel - 1, limit: finalHotel),
+      df1.colRecords('hotel_price', offset: finalHotel - 1, limit: finalHotel)
+    ];
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -78,6 +85,62 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                         //     image: AssetImage("assets/udaipur.jpg"),
                         //     fit: BoxFit.cover),
                       ),
+                      child: Stack(children: [
+                        Align(
+                            alignment: Alignment.topLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  20.0, 15.0, 15.0, 0.0),
+                              child: Text(
+                                hotel_info[0]
+                                    .toString()
+                                    .replaceAll('[', '')
+                                    .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  20.0, 0.0, 0.0, 15.0),
+                              child: Text(
+                                "Rating: " +
+                                    hotel_info[1]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0.0, 0.0, 20.0, 15.0),
+                              child: Text(
+                                "Price: \$ " +
+                                    hotel_info[2]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', '') +
+                                    " per night",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ))
+                      ]),
                     ),
                   ),
                 ),
@@ -95,7 +158,7 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                           child: Column(
                             children: [
                               Container(
-                                height: MediaQuery.of(context).size.width / 10,
+                                height: MediaQuery.of(context).size.width / 12,
                                 width: MediaQuery.of(context).size.width,
                                 color: Colors.transparent,
                                 child: TabBar(
@@ -109,16 +172,6 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                               ),
                               Expanded(
                                 child: TabBarView(children: tabContent()),
-                                /* child: TabBarView(
-                                children: [
-                                  Text(
-                                    "tab 1",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text("tab 2",
-                                      style: TextStyle(color: Colors.white))
-                                ],
-                              ) */
                               ),
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(
@@ -186,13 +239,289 @@ tabMaker() {
 
 tabContent() {
   List<Widget> content = [];
-  for (var i = 1; i <= numTabs; i++) {
+
+  for (var i = 0; i < numTabs; i++) {
+    var attraction_info = [
+      df2.colRecords('attraction_name',
+          offset: attractionList[i] - 1, limit: attractionList[i]),
+      df2.colRecords('attraction_rating',
+          offset: attractionList[i] - 1, limit: attractionList[i]),
+      df2.colRecords('attraction_price',
+          offset: attractionList[i] - 1, limit: attractionList[i]),
+    ];
+    var restaurant1_info = [
+      df3.colRecords('rest_name',
+          offset: restaurantList[i] - 1, limit: restaurantList[i]),
+    ];
+    var restaurant2_info = [
+      df3.colRecords('rest_name',
+          offset: restaurantList[i + numTabs] - 1,
+          limit: restaurantList[i + numTabs]),
+    ];
     content.add(
-      Align(
-        alignment: Alignment.center,
-        child: Text(
-          "Tab $i",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+        child: Column(
+          children: [
+            Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Attraction: ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: Container(
+                      height: 60,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.white30,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Stack(children: [
+                        Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              child: Text(
+                                attraction_info[0]
+                                    .toString()
+                                    .replaceAll('[', '')
+                                    .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        /* Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  20.0, 0.0, 0.0, 15.0),
+                              child: Text(
+                                "Rating: " +
+                                    attraction_info[1]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0.0, 0.0, 20.0, 15.0),
+                              child: Text(
+                                "Price: \$ " +
+                                    attraction_info[2]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', '') +
+                                    " per night",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )) */
+                      ]),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Lunch: ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: Container(
+                      height: 60,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.white30,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Stack(children: [
+                        Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              child: Text(
+                                restaurant1_info[0]
+                                    .toString()
+                                    .replaceAll('[', '')
+                                    .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        /* Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  20.0, 0.0, 0.0, 15.0),
+                              child: Text(
+                                "Rating: " +
+                                    attraction_info[1]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0.0, 0.0, 20.0, 15.0),
+                              child: Text(
+                                "Price: \$ " +
+                                    attraction_info[2]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', '') +
+                                    " per night",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )) */
+                      ]),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Dinner: ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15.0),
+                    child: Container(
+                      height: 60,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Colors.white30,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Stack(children: [
+                        Align(
+                            alignment: Alignment.center,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              child: Text(
+                                restaurant2_info[0]
+                                    .toString()
+                                    .replaceAll('[', '')
+                                    .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        /* Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  20.0, 0.0, 0.0, 15.0),
+                              child: Text(
+                                "Rating: " +
+                                    attraction_info[1]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', ''),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )),
+                        Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0.0, 0.0, 20.0, 15.0),
+                              child: Text(
+                                "Price: \$ " +
+                                    attraction_info[2]
+                                        .toString()
+                                        .replaceAll('[', '')
+                                        .replaceAll(']', '') +
+                                    " per night",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )) */
+                      ]),
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
         ),
       ),
     );

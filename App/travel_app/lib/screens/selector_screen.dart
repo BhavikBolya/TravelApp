@@ -3,6 +3,7 @@ import 'package:travel_app/screens/preferences_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
 int numHotels = hotelChoicesList.length;
+var finalHotel = null;
 
 class HotelSelector extends StatefulWidget {
   @override
@@ -103,23 +104,23 @@ hotels(context) {
 
   for (var i = 0; i < numHotels; i++) {
     var hotel_info = [
-      df.colRecords('hotel_name',
+      df1.colRecords('hotel_name',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('hotel_rating',
+      df1.colRecords('hotel_rating',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('hotel_experience',
+      df1.colRecords('hotel_experience',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('amenities',
+      df1.colRecords('amenities',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('address',
+      df1.colRecords('address',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('city',
+      df1.colRecords('city',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('country',
+      df1.colRecords('country',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('location',
+      df1.colRecords('location',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
-      df.colRecords('hotel_price',
+      df1.colRecords('hotel_price',
           offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i])
     ];
     hotelList.add(Align(
@@ -136,6 +137,7 @@ hotels(context) {
                 actions: [
                   InkWell(
                       onTap: () {
+                        finalHotel = hotelChoicesList[i];
                         Navigator.pushNamed(context, AppRoutes.itineraryRoute);
                       },
                       child: Padding(

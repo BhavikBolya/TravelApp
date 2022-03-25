@@ -4,6 +4,7 @@ import 'package:travel_app/algorithm/attraction_algo.dart';
 
 import 'package:travel_app/algorithm/hotel_algo.dart';
 import 'package:travel_app/algorithm/restaurant_algo.dart';
+import 'package:travel_app/screens/selector_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:df/df.dart';
 import 'dart:convert';
@@ -12,7 +13,11 @@ List userHotelPreferences = [];
 List userCuisinePreferences = [];
 List userAttractionPreferences = [];
 List hotelChoicesList = [];
-DataFrame df = DataFrame();
+List attractionList = [];
+List restaurantList = [];
+DataFrame df1 = DataFrame();
+DataFrame df2 = DataFrame();
+DataFrame df3 = DataFrame();
 
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({Key? key}) : super(key: key);
@@ -192,18 +197,34 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           ),
           InkWell(
               onTap: () async {
-                var data =
+                var hotelsData =
                     await rootBundle.loadString('assets/database/hotels.json');
+                var attractionsData = await rootBundle
+                    .loadString('assets/database/attractions.json');
+                var restaurantData = await rootBundle
+                    .loadString('assets/database/restaurants.json');
 
-                var decodedData = List<Map<String, dynamic>>.from(
-                    json.decode(data)['hotels']);
+                var decodedHotels = List<Map<String, dynamic>>.from(
+                    json.decode(hotelsData)['hotels']);
+                var decodedAttractions = List<Map<String, dynamic>>.from(
+                    json.decode(attractionsData)['attractions']);
+                var decodedrestaurants = List<Map<String, dynamic>>.from(
+                    json.decode(restaurantData)['restaurants']);
 
-                df = await DataFrame.fromRows(decodedData);
+                df1 = await DataFrame.fromRows(decodedHotels);
+                df2 = await DataFrame.fromRows(decodedAttractions);
+                df3 = await DataFrame.fromRows(decodedrestaurants);
 
                 hotelChoicesList = await hotel_algo(
-                    df, "Jaipur", 700, 5, userHotelPreferences);
+                    df1, "Jaipur", 700, 5, userHotelPreferences);
+                attractionList = await attraction_algo(
+                    df2, "Jaipur", 5, userAttractionPreferences);
+                restaurantList = await restaurant_algo(
+                    df3, "Jaipur", 5, userCuisinePreferences);
 
-                //print(hotelChoicesList);
+                print(hotelChoicesList);
+                print(attractionList);
+                print(restaurantList);
 
                 Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },
