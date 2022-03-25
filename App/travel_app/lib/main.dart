@@ -13,8 +13,9 @@ import 'package:travel_app/screens/register_screen.dart';
 import 'package:travel_app/screens/selector_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
-void main(){
-
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
