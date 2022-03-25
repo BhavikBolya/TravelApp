@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../main.dart';
 import '../utils/authentication.dart';
@@ -31,45 +32,76 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 ),
               ),
               onPressed: () async {
-                setState(() {
-                  _isSigningIn = true;
-                });
-                
-                User? user =
-                  await Authentication.signInWithGoogle(context: context);// TODO: Add a method call to the Google Sign-In authentication
+                // setState(() {
+                //   _isSigningIn = true;
+                // });
 
-                setState(() {
-                  _isSigningIn = false;
-                });
-                
-                if (user != null) {
-                  Navigator.pushNamed(context, AppRoutes.homeRoute);
-                }
+                // User? user = await Authentication.signInWithGoogle(
+                //     context:
+                //         context); // TODO: Add a method call to the Google Sign-In authentication
+                // print("Y");
+                // setState(() {
+                //   _isSigningIn = false;
+                // });
+
+                // if (user != null) {
+                //   Navigator.pushNamed(context, AppRoutes.homeRoute);
+                // }
               },
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Image(
-                      image: AssetImage("assets/google_logo.png"),
-                      height: 35.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        'Sign in with Google',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 0),
+                                      child: Container(
+                                        height: 40,
+                                        width: 256,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        child: InkWell(
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          30, 0, 30, 0),
+                                                  child: Row(
+                                                    children: [
+                                                      Image.asset(
+                                                        "assets/images/google-logo.png",
+                                                        scale: 2,
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .fromLTRB(
+                                                                10, 0, 0, 0),
+                                                        child: Text(
+                                                            "Continue in with Google",
+                                                            style: TextStyle(
+                                                                fontFamily: GoogleFonts
+                                                                        .roboto()
+                                                                    .fontFamily,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w400,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        0.54))),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            onTap: () {
+                                              //GoogleSignIn().signIn();
+                                            }),
+                                      ),
+                                    ),
             ),
     );
   }

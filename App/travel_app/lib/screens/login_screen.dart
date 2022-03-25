@@ -1,11 +1,14 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/authentication.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/widgets/google_sign_in_button.dart';
+
+import '../utils/fire_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -18,7 +21,10 @@ class _LoginScreenState extends State<LoginScreen> {
   String email = "";
   String password = "";
   bool changeButton = false;
+  
   final _formKey = GlobalKey<FormState>();
+  final _emailTextController = TextEditingController();
+  final _passwordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          controller: _emailTextController,
                                           keyboardType:
                                               TextInputType.emailAddress,
                                           style: TextStyle(color: Colors.white),
@@ -146,6 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          controller: _passwordTextController,
                                           style: TextStyle(color: Colors.white),
                                           keyboardType:
                                               TextInputType.visiblePassword,
@@ -239,30 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 20, 0, 0),
-                                      child: Container(
-                                        height: 40,
-                                        width: 256,
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        child: FutureBuilder(
-                                          future: Authentication.initializeFirebase(context: context),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.hasError){
-                                              return Text('Error initializing Firebase');
-                                            } else if(snapshot.connectionState == ConnectionState.done){
-                                              return GoogleSignInButton();
-                                            }
-                                            return CircularProgressIndicator(
-                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                Colors.redAccent,
-                                              ),
-                                            );
-                                          },
-                                          
-                                        ),
-                                      ),
+                                      child: GoogleSignInButton(),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 20.0),
@@ -296,13 +281,16 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: InkWell(
-                    onTap: () {
+                    onTap: () async {
                       if (_formKey.currentState!.validate()) {
-                        setState(() {
-                          changeButton = true;
-                        });
-                        Navigator.pushNamed(context, AppRoutes.homeRoute);
-                        
+                        User? user = await FireAuth.signInUsingEmailPassword(
+                          email: _emailTextController.text,
+                          password: _passwordTextController.text,
+                          context: context,
+                        );
+                        if (user != null) {
+                          Navigator.pushNamed(context, AppRoutes.homeRoute);
+                        }
                       }
                     },
                     child: Container(
@@ -352,4 +340,5 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
         ));
   }
+  
 }

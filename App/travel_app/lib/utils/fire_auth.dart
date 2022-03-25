@@ -31,35 +31,56 @@ class FireAuth {
   }
 
   static Future<User?> signInUsingEmailPassword({
-  required String email,
-  required String password,
-  required BuildContext context,
-}) async {
-  FirebaseAuth auth = FirebaseAuth.instance;
-  User? user;
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
 
-  try {
-    UserCredential userCredential = await auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    user = userCredential.user;
-  } on FirebaseAuthException catch (e) {
-    if (e.code == 'user-not-found') {
-      print('No user found for that email.');
-    } else if (e.code == 'wrong-password') {
-      print('Wrong password provided.');
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          FireAuth.customSnackBar(
+            content: 'No user found for that email.',
+          ),
+        );
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          FireAuth.customSnackBar(
+            content: 'Wrong password provided.',
+          ),
+        );
+        print('Wrong password provided.');
+      }
     }
+
+    return user;
   }
 
-  return user;
-}
-static Future<User?> refreshUser(User user) async {
-  FirebaseAuth auth = FirebaseAuth.instance;
+  static Future<User?> refreshUser(User user) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
 
-  await user.reload();
-  User? refreshedUser = auth.currentUser;
+    await user.reload();
+    User? refreshedUser = auth.currentUser;
 
-  return refreshedUser;
-}
+    return refreshedUser;
+  }
+
+  static SnackBar customSnackBar({required String content}) {
+    return SnackBar(
+      backgroundColor: Colors.black,
+      content: Text(
+        content,
+        style: TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
+      ),
+    );
+  }
 }
