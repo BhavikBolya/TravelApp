@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:travel_app/algorithm/attraction_algo.dart';
 
 import 'package:travel_app/algorithm/hotel_algo.dart';
+import 'package:travel_app/algorithm/restaurant_algo.dart';
 import 'package:travel_app/utils/routes.dart';
 import 'package:df/df.dart';
 import 'dart:convert';
+
+List userHotelPreferences = [];
+List userCuisinePreferences = [];
+List userAttractionPreferences = [];
+List hotelChoicesList = [];
+DataFrame df = DataFrame();
 
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({Key? key}) : super(key: key);
@@ -14,9 +22,6 @@ class PreferencesScreen extends StatefulWidget {
 }
 
 class _PreferencesScreenState extends State<PreferencesScreen> {
-  List userHotelPreferences = [];
-  List userCuisinePreferences = [];
-  List userAttractionPreferences = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -193,12 +198,12 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 var decodedData = List<Map<String, dynamic>>.from(
                     json.decode(data)['hotels']);
 
-                DataFrame df = await DataFrame.fromRows(decodedData);
+                df = await DataFrame.fromRows(decodedData);
 
-                var hotelList = await hotel_algo(
+                hotelChoicesList = await hotel_algo(
                     df, "Jaipur", 700, 5, userHotelPreferences);
 
-                print(df.subset(37, 38));
+                //print(hotelChoicesList);
 
                 Navigator.pushNamed(context, AppRoutes.hotelselectorRoute);
               },

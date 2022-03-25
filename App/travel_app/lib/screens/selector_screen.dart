@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/preferences_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
-int numHotels = 3;
+int numHotels = hotelChoicesList.length;
 
 class HotelSelector extends StatefulWidget {
   @override
@@ -82,9 +83,45 @@ class _HotelSelectorState extends State<HotelSelector> {
 
 hotels(context) {
   List<Widget> hotelList = [
-    SizedBox(height: 170),
+    SizedBox(
+      height: 170,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20.0),
+        child: Align(
+          alignment: Alignment.bottomLeft,
+          child: Text("Please select a hotel for your trip: ",
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+              )),
+        ),
+      ),
+    ),
   ];
-  for (var i = 1; i <= numHotels; i++) {
+
+  for (var i = 0; i < numHotels; i++) {
+    var hotel_info = [
+      df.colRecords('hotel_name',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('hotel_rating',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('hotel_experience',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('amenities',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('address',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('city',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('country',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('location',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i]),
+      df.colRecords('hotel_price',
+          offset: hotelChoicesList[i] - 1, limit: hotelChoicesList[i])
+    ];
     hotelList.add(Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -101,18 +138,66 @@ hotels(context) {
                       onTap: () {
                         Navigator.pushNamed(context, AppRoutes.itineraryRoute);
                       },
-                      child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius: BorderRadius.circular(50)),
-                          child: Icon(Icons.navigate_next)))
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 20, 15),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  color: Colors.amber,
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: Icon(Icons.navigate_next)),
+                        ),
+                      ))
                 ],
                 backgroundColor: Colors.black,
-                title: Text(
-                  "Hotel $i",
-                  style: TextStyle(color: Colors.white),
+                title: Column(
+                  children: [
+                    Text(
+                        hotel_info[0]
+                                .toString()
+                                .replaceAll('[', '')
+                                .replaceAll(']', '') +
+                            '\n',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
+                    Text(
+                      'Address: ' +
+                          hotel_info[4]
+                              .toString()
+                              .replaceAll('[', '')
+                              .replaceAll(']', '') +
+                          '\n\n'
+                              'Amenities: ' +
+                          hotel_info[3]
+                              .toString()
+                              .replaceAll('[', '')
+                              .replaceAll(']', '')
+                              .replaceAll("'", "") +
+                          '\n\n'
+                              'Experience: ' +
+                          hotel_info[2]
+                              .toString()
+                              .replaceAll('[', '')
+                              .replaceAll(']', '') +
+                          '\n\n' +
+                          'Rating: ' +
+                          hotel_info[1]
+                              .toString()
+                              .replaceAll('[', '')
+                              .replaceAll(']', '') +
+                          '\n\n' +
+                          'Price: \$ ' +
+                          hotel_info[8]
+                              .toString()
+                              .replaceAll('[', '')
+                              .replaceAll(']', '') +
+                          ' per night',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
               ),
             );
@@ -120,17 +205,55 @@ hotels(context) {
           child: Container(
             height: 165,
             width: MediaQuery.of(context).size.width - 40,
-            child: Column(
+            child: Stack(
               children: [
                 Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
+                      padding: const EdgeInsets.fromLTRB(20.0, 15.0, 15.0, 0.0),
                       child: Text(
-                        "Hotel $i",
+                        hotel_info[0]
+                            .toString()
+                            .replaceAll('[', '')
+                            .replaceAll(']', ''),
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 35,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )),
+                Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 15.0),
+                      child: Text(
+                        "Rating: " +
+                            hotel_info[1]
+                                .toString()
+                                .replaceAll('[', '')
+                                .replaceAll(']', ''),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )),
+                Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 20.0, 15.0),
+                      child: Text(
+                        "Price: \$ " +
+                            hotel_info[8]
+                                .toString()
+                                .replaceAll('[', '')
+                                .replaceAll(']', '') +
+                            " per night",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
                           fontWeight: FontWeight.w600,
                         ),
                       ),

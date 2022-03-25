@@ -216,9 +216,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: 210,
                 left: 0,
                 bottom: 0,
-                right: 40,
+                right: 0,
                 child: Align(
-                  alignment: Alignment.topRight,
+                  alignment: Alignment.topCenter,
                   child: InkWell(
                       onTap: () {
                         if (calc() == 0) {
@@ -230,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       child: Container(
                           height: 40,
-                          width: 40,
+                          width: 200,
                           decoration: BoxDecoration(
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(50),
@@ -240,7 +240,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                     offset: Offset(0, 2),
                                     blurRadius: 20.0)
                               ]),
-                          child: Icon(Icons.calendar_today))),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 25.0),
+                                child: Icon(Icons.calendar_today),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5.0),
+                                child: Text("Plan your itinerary",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    )),
+                              ),
+                            ],
+                          ))),
                 ),
               ),
             ],
