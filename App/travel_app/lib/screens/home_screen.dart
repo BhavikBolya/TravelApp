@@ -1,6 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travel_app/utils/routes.dart';
+import 'package:travel_app/widgets/destination_carousel.dart';
+
+int budget = 100;
+int numDays = 0;
+List Locations = ['Jaipur', 'Jaisalmer', 'Jodhpur', 'Udaipur'];
+String selectedLocation = "";
+int selectedLocationId = 0;
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -8,13 +16,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int budget = 100;
   DateTime initialDate = DateTime.now();
   DateTime finalDate = DateTime.now().add(Duration(days: 1));
 
   calc() {
-    int numDays = finalDate.difference(initialDate).inDays;
+    numDays = finalDate.difference(initialDate).inDays;
     print(numDays);
+    print(budget);
     return numDays;
   }
 
@@ -48,7 +56,54 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
                 child: IconButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.historyRoute);
+                    showDialog(
+                      barrierDismissible: true,
+                      //barrierColor: Colors.black87,
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        actions: [
+                          InkWell(
+                            onTap: () async {
+                              await FirebaseAuth.instance.signOut();
+                              Navigator.pushNamed(
+                                  context, AppRoutes.loginRoute);
+                            },
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(30, 30, 0, 30),
+                                  child: Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                        color: Colors.amber,
+                                        borderRadius:
+                                            BorderRadius.circular(50)),
+                                    child: Icon(
+                                      Icons.logout,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(30, 30, 30, 30),
+                                  child: Text(
+                                    "Sign Out",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                        backgroundColor: Colors.black,
+                      ),
+                    );
                   },
                   icon: Icon(Icons.account_circle_outlined),
                   iconSize: 45,
@@ -73,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.white30,
                         borderRadius: BorderRadius.circular(20)),
                     child: Stack(children: [
-                      InkWell(
+                      /* InkWell(
                         onTap: () {},
                         child: Container(
                           height: 35,
@@ -97,19 +152,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             )
                           ]),
                         ),
-                      ),
+                      ), */
                       Positioned(
-                        top: 50,
+                        top: 20,
                         left: 25,
                         right: 0,
                         bottom: 0,
                         child: Text(
                           "Set hotel budget:",
-                          style: TextStyle(color: Colors.amber),
+                          style: TextStyle(
+                              color: Colors.amber,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       Positioned(
-                        top: 80,
+                        top: 60,
                         left: 10,
                         right: 10,
                         child: SizedBox(
@@ -130,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       Positioned(
-                        top: 100,
+                        top: 70,
                         bottom: 0,
                         left: 20,
                         right: 0,
@@ -257,6 +315,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           ))),
                 ),
               ),
+              Positioned(
+                  top: 275,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: DestinationCarousel()),
             ],
           )),
     );

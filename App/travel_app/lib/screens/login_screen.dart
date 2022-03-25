@@ -212,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                     ),
-                                    Padding(
+                                    /* Padding(
                                       padding: const EdgeInsets.only(top: 10),
                                       child: Align(
                                         alignment: Alignment.centerRight,
@@ -223,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               fontWeight: FontWeight.w300),
                                         ),
                                       ),
-                                    ),
+                                    ), */
                                     Padding(
                                       padding: const EdgeInsets.only(top: 15),
                                       child: Divider(

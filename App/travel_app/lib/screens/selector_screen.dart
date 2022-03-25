@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/home_screen.dart';
 import 'package:travel_app/screens/preferences_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 
@@ -19,18 +21,23 @@ class _HotelSelectorState extends State<HotelSelector> {
         title: Center(
           child: InkWell(
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.destinationRoute);
+              //Navigator.pushNamed(context, AppRoutes.destinationRoute);
             },
-            child: Text(
-              "Location",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 44),
+              child: Text(
+                selectedLocation,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
         ),
+        centerTitle: true,
         toolbarHeight: 100,
+        leadingWidth: 100,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0, 0),
           child: IconButton(
@@ -38,8 +45,10 @@ class _HotelSelectorState extends State<HotelSelector> {
               Navigator.pushNamed(context, AppRoutes.homeRoute);
             },
             //icon: Icon(Icons.home_filled),
-            icon: Image.asset("assets/LOGO.png"),
-            iconSize: 35,
+            icon: Image.asset(
+              "assets/images/Safar-logo-white.png",
+            ),
+
             color: Colors.white,
           ),
         ),
@@ -48,7 +57,51 @@ class _HotelSelectorState extends State<HotelSelector> {
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 8.0, 0.0),
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.historyRoute);
+                showDialog(
+                  barrierDismissible: true,
+                  //barrierColor: Colors.black87,
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    actions: [
+                      InkWell(
+                        onTap: () async {
+                          await FirebaseAuth.instance.signOut();
+                          Navigator.pushNamed(context, AppRoutes.loginRoute);
+                        },
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(30, 30, 0, 30),
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    color: Colors.amber,
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: Icon(
+                                  Icons.logout,
+                                  size: 30,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(30, 30, 30, 30),
+                              child: Text(
+                                "Sign Out",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                    backgroundColor: Colors.black,
+                  ),
+                );
               },
               icon: Icon(Icons.account_circle_outlined),
               iconSize: 35,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:travel_app/screens/home_screen.dart';
 import 'package:travel_app/utils/routes.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
@@ -22,7 +23,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
               Navigator.pushNamed(context, AppRoutes.destinationRoute);
             },
             child: Text(
-              "LOCATION",
+              selectedLocation,
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -94,7 +95,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
             Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/jaisalmer.jpg"),
+                      image: AssetImage("assets/images/jaisalmer.jpg"),
                       fit: BoxFit.cover,
                       alignment: FractionalOffset.centerLeft)),
               height: MediaQuery.of(context).size.height,

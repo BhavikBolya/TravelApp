@@ -1,67 +1,110 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:travel_app/screens/home_screen.dart';
+import 'package:travel_app/utils/routes.dart';
 
+List locationImages = [
+  'assets/images/jaipur.jpg',
+  'assets/images/jaisalmer.jpg',
+  'assets/images/jodhpur.jpg',
+  'assets/images/udaipur.jpg'
+];
 
-class DestinationCarousel extends StatelessWidget {
+class DestinationCarousel extends StatefulWidget {
   const DestinationCarousel({Key? key}) : super(key: key);
 
+  @override
+  State<DestinationCarousel> createState() => _DestinationCarouselState();
+}
+
+class _DestinationCarouselState extends State<DestinationCarousel> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+        /* Padding(
+            padding: EdgeInsets.fromLTRB(25, 0, 25, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text('Popular Destinations', style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 1.5),),
-                GestureDetector(
-                  onTap: () => print('See All'),
-                  child: Text('See All', style: TextStyle(fontSize: 20.0, color: Colors.amber, fontWeight: FontWeight.bold, letterSpacing: 1.5),),
-                ),],)
-        ),
-        Container(height: 300.0,
-          color: Colors.amber,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 4,
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                margin: EdgeInsets.all(10.0),
-                width: 210.0,
-                color: Colors.red,
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      height: 120.0,
-                      width: 210,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('Udaipur', style: TextStyle(
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 1.2,
-                            ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+              children: [
+                Text(
+                  'Selected Destination: $selectedLocation',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              );
-            },
+              ],
+            )), */
+        Padding(
+          padding: const EdgeInsets.only(top: 15.0),
+          child: Container(
+            height: 300.0,
+            child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: carouselContent(context)),
           ),
         ),
       ],
     );
   }
+}
+
+carouselContent(context) {
+  List<Widget> locationList = [];
+  for (var i = 0; i < Locations.length; i++) {
+    locationList.add(Padding(
+      padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+      child: InkWell(
+        onTap: () {
+          selectedLocation = Locations[i];
+          selectedLocationId = i;
+          print(selectedLocation);
+          //Navigator.pushNamed(context, AppRoutes.destinationRoute);
+        },
+        child: Stack(
+          children: [
+            Container(
+                height: 500,
+                width: 200,
+                decoration: BoxDecoration(
+                    color: Colors.white30,
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                        image: AssetImage(locationImages[i]),
+                        fit: BoxFit.cover,
+                        alignment: FractionalOffset.center)),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 12, 0, 0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      Locations[i],
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),
+                    ),
+                  ),
+                )),
+            Container(
+                height: 500,
+                width: 200,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black.withOpacity(0.85),
+                        Colors.transparent
+                      ]),
+                  borderRadius: BorderRadius.circular(15),
+                )),
+          ],
+        ),
+      ),
+    ));
+  }
+  return locationList;
 }
