@@ -16,7 +16,7 @@ jobs:
         with:
           flutter-version: '3.7.12'
           channel: stable
-          cache: true
+          cache: false
 
       - name: Install dependencies
         working-directory: App/travel_app
@@ -30,11 +30,12 @@ jobs:
         run: |
           echo '{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}' > App/travel_app/build/web/vercel.json
 
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25.1.1
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: App/travel_app/build/web
-          vercel-args: '--prod'
+        working-directory: App/travel_app/build/web
+        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
