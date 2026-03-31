@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to Vercel
         working-directory: App/travel_app/build/web
-        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
+        run: vercel deploy . --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
