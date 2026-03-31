@@ -73,9 +73,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(196, 196, 196, 0.45),
                             borderRadius: BorderRadius.circular(15),
-                            /* boxShadow: [
-                              BoxShadow(color: Colors.black.withOpacity(0.5)),
-                            ], */
                           ),
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(
@@ -90,9 +87,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       child: Container(
                                         height: 40,
                                         child: TextFormField(
+                                          controller: _nameTextController,
                                           autocorrect: false,
                                           keyboardType:
-                                              TextInputType.emailAddress,
+                                              TextInputType.text,
                                           style: TextStyle(color: Colors.white),
                                           decoration: InputDecoration(
                                             isDense: true,
@@ -139,7 +137,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           onChanged: (value) {
                                             name = value;
                                             setState(() {});
-                                            //print(email);
                                           },
                                         ),
                                       ),
@@ -191,12 +188,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                         .circular(10)),
                                           ),
                                           validator: (value) {
-                                            Validator.validateEmail(email: value.toString());
+                                            return Validator.validateEmail(email: value.toString());
                                           },
                                           onChanged: (value) {
                                             email = value;
                                             setState(() {});
-                                            //print(email);
                                           },
                                         ),
                                       ),
@@ -249,12 +245,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           ),
                                           obscureText: true,
                                           validator: (value) {
-                                            Validator.validatePassword(password: value.toString());
+                                            return Validator.validatePassword(password: value.toString());
                                           },
                                           onChanged: (value) {
                                             password = value;
                                             setState(() {});
-                                            //print(password);
                                           },
                                         ),
                                       ),
@@ -374,11 +369,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           name: _nameTextController.text,
                           email: _emailTextController.text,
                           password: _passwordTextController.text,
+                          context: context,
                         );
                       if (user != null) {
                         Navigator.pushNamed(context, AppRoutes.homeRoute);
+                      } else {
+                        setState(() {
+                          changeButton = false;
+                        });
                       }
-                        
+
                       }
                     },
                     child: Container(

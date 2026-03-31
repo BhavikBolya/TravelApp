@@ -6,6 +6,7 @@ class FireAuth {
     required String name,
     required String email,
     required String password,
+    required BuildContext context,
   }) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     User? user;
@@ -19,13 +20,21 @@ class FireAuth {
       await user.reload();
       user = auth.currentUser;
     } on FirebaseAuthException catch (e) {
+      String message = 'Registration failed. Please try again.';
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        message = 'Password is too weak.';
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        message = 'An account already exists for that email.';
+      } else if (e.code == 'invalid-email') {
+        message = 'Invalid email address.';
       }
+      ScaffoldMessenger.of(context).showSnackBar(
+        FireAuth.customSnackBar(content: message),
+      );
     } catch (e) {
-      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        FireAuth.customSnackBar(content: e.toString()),
+      );
     }
     return user;
   }
