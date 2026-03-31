@@ -1,0 +1,39 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [claude/setup-app-hosting-Ktkzh, main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.x'
+          channel: stable
+
+      - name: Install dependencies
+        working-directory: App/travel_app
+        run: flutter pub get
+
+      - name: Build web
+        working-directory: App/travel_app
+        run: flutter build web --release
+
+      - name: Add Vercel SPA routing config
+        run: |
+          echo '{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}' > App/travel_app/build/web/vercel.json
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: App/travel_app/build/web
+          vercel-args: '--prod'
