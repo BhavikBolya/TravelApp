@@ -24,7 +24,7 @@ jobs:
 
       - name: Build web
         working-directory: App/travel_app
-        run: flutter build web --release --pwa-strategy=none
+        run: flutter build web --release --pwa-strategy=none --web-renderer html
 
       - name: Add Vercel SPA routing config
         run: |
