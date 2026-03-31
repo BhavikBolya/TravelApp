@@ -28,7 +28,7 @@ jobs:
 
       - name: Add Vercel SPA routing config
         run: |
-          echo '{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}' > App/travel_app/build/web/vercel.json
+          echo '{"version":2,"buildCommand":"","outputDirectory":".","rewrites":[{"source":"/(.*)","destination":"/index.html"}]}' > App/travel_app/build/web/vercel.json
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
